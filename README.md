@@ -1,4 +1,4 @@
-#Subzy
+# Subzy
 Subdomain takeover tool based on [can-i-take-over-xyz](https://github.com/EdOverflow/can-i-take-over-xyz/blob/master/README.md) fingerprints
 
 
