@@ -1,6 +1,7 @@
 # Subzy
 Subdomain takeover tool based on [can-i-take-over-xyz](https://github.com/EdOverflow/can-i-take-over-xyz/blob/master/README.md) fingerprints
 
+![Subzy subdomain takeover](https://i.imgur.com/gw8RGo9.png "Logo Title Text 1")
 
 ## Installation
 ```git clone https://github.com/LukaSikic/subzy```
