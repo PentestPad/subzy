@@ -1,11 +1,13 @@
 package src
 
 import (
+	"crypto/tls"
 	"github.com/logrusorgru/aurora"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
+	"time"
 )
 
 type Result struct {
@@ -23,7 +25,9 @@ func checkSubdomain(subdomain string, settings Settings) Result {
 		}
 	}
 
-	resp, err := http.Get(subdomain)
+	client := httpClient(settings)
+
+	resp, err := client.Get(subdomain)
 	if err != nil {
 		return Result {aurora.Red("HTTP ERROR"), Fingerprint{}}
 	}
@@ -58,4 +62,20 @@ func isValidUrl(toTest string) bool {
 	} else {
 		return true
 	}
+}
+
+func httpClient(settings Settings) *http.Client {
+
+	tr := &http.Transport{
+		TLSClientConfig: &tls.Config{InsecureSkipVerify: !settings.VerifySSL},
+	}
+
+	timeout := time.Duration(time.Duration(settings.Timeout) * time.Second)
+	client := &http.Client{
+		Timeout: timeout,
+		Transport: tr,
+	}
+
+	return client
+
 }
