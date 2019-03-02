@@ -10,7 +10,7 @@ Clone GitHub repo
 Run program  
 ```./subzy/subzy```
 
-## Options
+### Options
 Only required flag is either `--target` or `--targets`  
 
 `--target` (string) - Set single or multiple (comma separated) target subdomain/s  
