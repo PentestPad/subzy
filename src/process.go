@@ -4,21 +4,19 @@ import (
 	"fmt"
 	"github.com/logrusorgru/aurora"
 	"log"
+	"strings"
 )
 
 type Settings struct {
 	Targets 	string
 	Https		bool
 	Concurrency	int
+	Target		string
 }
 
 func Process(settings Settings) {
 
-	subdomains, err := readSubdomains(settings.Targets)
-	if err != nil {
-		log.Fatalf("Error reading subdomains: %s", err)
-	}
-
+	subdomains := getSubdomains(settings)
 
 	subdomainCh := make(chan string)
 	sizeCh := make(chan string)
@@ -62,4 +60,17 @@ func processor(subdomainCh chan string, sizeCh chan string, settings Settings){
 
 func generator(subdomain string, subdomainCh chan string) {
 	subdomainCh <- subdomain
+}
+
+func getSubdomains(settings Settings) []string {
+	if settings.Target == "" {
+		subdomains, err := readSubdomains(settings.Targets)
+		if err != nil {
+			log.Fatalf("Error reading subdomains: %s", err)
+		}
+
+		return subdomains
+	}
+
+	return strings.Split(settings.Target, ",")
 }

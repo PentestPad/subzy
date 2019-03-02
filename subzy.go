@@ -14,6 +14,7 @@ func main() {
 	flag.StringVar(&settings.Targets, "targets", "list.txt", "File path to list of subdomains to be scanned")
 	flag.BoolVar(&settings.Https, "https", false, "Force https protocol if not provided in the list (default false)")
 	flag.IntVar(&settings.Concurrency, "concurrency", 10, "Number of concurrent checks")
+	flag.StringVar(&settings.Target, "target", "", "Single or multiple subdomains separated by comma")
 
 	flag.Parse()
 
