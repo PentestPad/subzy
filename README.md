@@ -1,35 +1,32 @@
-# Subzy
-Subdomain takeover tool based on [can-i-take-over-xyz](https://github.com/EdOverflow/can-i-take-over-xyz/blob/master/README.md) fingerprints
+## Subzy
+Subdomain takeover tool which works based on matching response fingerprings from [can-i-take-over-xyz](https://github.com/EdOverflow/can-i-take-over-xyz/blob/master/README.md) 
 
 ![Subzy subdomain takeover](https://i.imgur.com/gw8RGo9.png "Subzy subdomain takeover")
 
-## Installation
-```git clone https://github.com/LukaSikic/subzy```
+### Installation
+Clone GitHub repo   
+```git clone https://github.com/LukaSikic/subzy```  
 
-## Usage
-``` 
-$ ./subzy  --help
+Run program  
+```./subzy/subzy```
 
-Usage of ./subzy:
-   -concurrency int
-          Number of concurrent checks (default 10)
-    -https
-          Force https protocol if not provided in the list (default false)
-    -target string
-          Single or multiple subdomains separated by comma
-    -targets string
-          File path to list of subdomains to be scanned (default "list.txt")
-          
-./subzy --targets=list.txt --https=false --concurrency=20
-```
+## Options
+Only required flag is either `--target` or `--targets`  
 
-### Load targets from list
-````./subzy --targets=list.txt````
+`--target` (string) - Set single or multiple (comma separated) target subdomain/s  
+`--targets` (string) - File name/path to list of subdomains    
+`--concurrency` (integer) - Number of concurrent checks (default 10)    
+`--hide_fails` (boolean) - Hide failed checks and invulnerable subdomains (default false)    
+`--https` (boolean) - Use HTTPS by default if protocol not defined on targeted subdomain (default false)  
+`--timeout` (integer) - HTTP request timeout in seconds (default 10)  
+`--verify_ssl` (boolean) - If set to true, it won't check site with invalid SSL
 
-### Check single or few subdomains 
+### Usage
+Target subdomain can have protocol defined, if not `http://` will be used by default if `--https` not specifically set to true.
 
-```./subzy --target=test.google.com``` 
+-  List of subdomains
+   - ````./subzy --targets=list.txt````
 
-or
-
-```./subzy --target=test.google.com,test.yahoo.com```
+- Single or few subdomains 
+  - ```./subzy --target=test.google.com```
+  - ```./subzy --target=test.google.com,https://test.yahoo.com```
