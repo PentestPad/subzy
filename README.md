@@ -1,7 +1,7 @@
 ## Subzy
 Subdomain takeover tool which works based on matching response fingerprings from [can-i-take-over-xyz](https://github.com/EdOverflow/can-i-take-over-xyz/blob/master/README.md) 
 
-![Subzy subdomain takeover](https://i.imgur.com/gw8RGo9.png "Subzy subdomain takeover")
+![Subzy subdomain takeover](https://i.imgur.com/QvZNFdF.png "Subzy subdomain takeover")
 
 ### Installation
 ___
