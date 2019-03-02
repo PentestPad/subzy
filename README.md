@@ -4,13 +4,15 @@ Subdomain takeover tool which works based on matching response fingerprings from
 ![Subzy subdomain takeover](https://i.imgur.com/gw8RGo9.png "Subzy subdomain takeover")
 
 ### Installation
+___
 Clone GitHub repo   
 ```git clone https://github.com/LukaSikic/subzy```  
 
 Run program  
 ```./subzy/subzy```
-------
+
 ### Options
+___
 Only required flag is either `--target` or `--targets`  
 
 `--target` (string) - Set single or multiple (comma separated) target subdomain/s  
@@ -20,8 +22,9 @@ Only required flag is either `--target` or `--targets`
 `--https` (boolean) - Use HTTPS by default if protocol not defined on targeted subdomain (default false)  
 `--timeout` (integer) - HTTP request timeout in seconds (default 10)  
 `--verify_ssl` (boolean) - If set to true, it won't check site with invalid SSL
-------
+
 ### Usage
+___
 Target subdomain can have protocol defined, if not `http://` will be used by default if `--https` not specifically set to true.
 
 -  List of subdomains
