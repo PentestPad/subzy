@@ -1,18 +1,18 @@
 package src
 
 type Fingerprint struct {
-	engine			string
-	status			string
-	fingerprint 	string
-	discussion		string
-	documentation	string
+	engine        string
+	status        string
+	fingerprint   string
+	discussion    string
+	documentation string
 }
 
 func Fingerprints() [22]Fingerprint {
 
 	var fingerprints [22]Fingerprint
 
-	fingerprints[0] = Fingerprint {
+	fingerprints[0] = Fingerprint{
 		"AWS/S3",
 		"Vulnerable",
 		"The specified bucket does not exist",
@@ -20,7 +20,7 @@ func Fingerprints() [22]Fingerprint {
 		"Not available",
 	}
 
-	fingerprints[1] = Fingerprint {
+	fingerprints[1] = Fingerprint{
 		"Bitbucket",
 		"Vulnerable",
 		"Repository not found",
@@ -28,7 +28,7 @@ func Fingerprints() [22]Fingerprint {
 		"Not available",
 	}
 
-	fingerprints[2] = Fingerprint {
+	fingerprints[2] = Fingerprint{
 		"Cloudfront",
 		"Edge case",
 		"Bad Request: ERROR: The request could not be satisfied",
@@ -36,7 +36,7 @@ func Fingerprints() [22]Fingerprint {
 		"Not available",
 	}
 
-	fingerprints[3] = Fingerprint {
+	fingerprints[3] = Fingerprint{
 		"Desk",
 		"Not vulnerable",
 		"Please try again or try Desk.com free for 14 days.",
@@ -44,7 +44,7 @@ func Fingerprints() [22]Fingerprint {
 		"Not available",
 	}
 
-	fingerprints[4] = Fingerprint {
+	fingerprints[4] = Fingerprint{
 		"Fastly",
 		"Edge case",
 		"Fastly error: unknown domain:",
@@ -52,7 +52,7 @@ func Fingerprints() [22]Fingerprint {
 		"Not available",
 	}
 
-	fingerprints[5] = Fingerprint {
+	fingerprints[5] = Fingerprint{
 		"Feedpress",
 		"Vulnerable",
 		"The feed has not been found.",
@@ -60,7 +60,7 @@ func Fingerprints() [22]Fingerprint {
 		"Not available",
 	}
 
-	fingerprints[6] = Fingerprint {
+	fingerprints[6] = Fingerprint{
 		"Ghost",
 		"Vulnerable",
 		"The thing you were looking for is no longer here, or never was",
@@ -68,7 +68,7 @@ func Fingerprints() [22]Fingerprint {
 		"Not available",
 	}
 
-	fingerprints[7] = Fingerprint {
+	fingerprints[7] = Fingerprint{
 		"Github",
 		"Vulnerable",
 		"There isn't a Github Pages site here",
@@ -76,7 +76,7 @@ func Fingerprints() [22]Fingerprint {
 		"Not available",
 	}
 
-	fingerprints[8] = Fingerprint {
+	fingerprints[8] = Fingerprint{
 		"Help Juice",
 		"Vulnerable",
 		"We could not find what you're looking for",
@@ -84,7 +84,7 @@ func Fingerprints() [22]Fingerprint {
 		"https://help.helpjuice.com/34339-getting-started/custom-domain",
 	}
 
-	fingerprints[9] = Fingerprint {
+	fingerprints[9] = Fingerprint{
 		"Help Scout",
 		"Vulnerable",
 		"No settings were found for this company",
@@ -92,7 +92,7 @@ func Fingerprints() [22]Fingerprint {
 		"https://docs.helpscout.net/article/42-setup-custom-domain",
 	}
 
-	fingerprints[10] = Fingerprint {
+	fingerprints[10] = Fingerprint{
 		"Heroku",
 		"Edge case",
 		"No such app",
@@ -100,7 +100,7 @@ func Fingerprints() [22]Fingerprint {
 		"Not available",
 	}
 
-	fingerprints[11] = Fingerprint {
+	fingerprints[11] = Fingerprint{
 		"JetBrains",
 		"Vulnerable",
 		"is not a registered InCloud YouTrack",
@@ -108,7 +108,7 @@ func Fingerprints() [22]Fingerprint {
 		"Not available",
 	}
 
-	fingerprints[12] = Fingerprint {
+	fingerprints[12] = Fingerprint{
 		"Mashery",
 		"Not vulnerable",
 		"Unrecognized domain",
@@ -116,7 +116,7 @@ func Fingerprints() [22]Fingerprint {
 		"Not available",
 	}
 
-	fingerprints[13] = Fingerprint {
+	fingerprints[13] = Fingerprint{
 		"Readme.io",
 		"Vulnerable",
 		"Project doesnt exist... yet!",
@@ -124,7 +124,7 @@ func Fingerprints() [22]Fingerprint {
 		"Not available",
 	}
 
-	fingerprints[14] = Fingerprint {
+	fingerprints[14] = Fingerprint{
 		"Shopify",
 		"Edge Case",
 		"Sorry, this shop is currently unavailable",
@@ -132,7 +132,7 @@ func Fingerprints() [22]Fingerprint {
 		"https://medium.com/@thebuckhacker/how-to-do-55-000-subdomain-takeover-in-a-blink-of-an-eye-a94954c3fc75",
 	}
 
-	fingerprints[15] = Fingerprint {
+	fingerprints[15] = Fingerprint{
 		"Surge.sh",
 		"Vulnerable",
 		"project not found",
@@ -140,7 +140,7 @@ func Fingerprints() [22]Fingerprint {
 		"https://surge.sh/help/adding-a-custom-domain",
 	}
 
-	fingerprints[16] = Fingerprint {
+	fingerprints[16] = Fingerprint{
 		"Tumblr",
 		"Vulnerable",
 		"Whatever you were looking for doesn't currently exist at this address",
@@ -148,7 +148,7 @@ func Fingerprints() [22]Fingerprint {
 		"Not available",
 	}
 
-	fingerprints[17] = Fingerprint {
+	fingerprints[17] = Fingerprint{
 		"Tilda",
 		"Edge Case",
 		"Please renew your subscription",
@@ -156,7 +156,7 @@ func Fingerprints() [22]Fingerprint {
 		"Not available",
 	}
 
-	fingerprints[18] = Fingerprint {
+	fingerprints[18] = Fingerprint{
 		"Unbounce",
 		"Not vulnerable",
 		"The requested URL was not found on this server",
@@ -164,7 +164,7 @@ func Fingerprints() [22]Fingerprint {
 		"Not available",
 	}
 
-	fingerprints[19] = Fingerprint {
+	fingerprints[19] = Fingerprint{
 		"UserVoice",
 		"Vulnerable",
 		"This UserVoice subdomain is currently available",
@@ -172,7 +172,7 @@ func Fingerprints() [22]Fingerprint {
 		"Not available",
 	}
 
-	fingerprints[20] = Fingerprint {
+	fingerprints[20] = Fingerprint{
 		"Wordpress",
 		"Vulnerable",
 		"Do you want to register ",
@@ -180,7 +180,7 @@ func Fingerprints() [22]Fingerprint {
 		"Not available",
 	}
 
-	fingerprints[21] = Fingerprint {
+	fingerprints[21] = Fingerprint{
 		"Zendesk",
 		"Not Vulnerable",
 		"Help Center Closed",

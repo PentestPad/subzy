@@ -8,26 +8,26 @@ import (
 )
 
 type Settings struct {
-	Targets 	string
-	Https		bool
-	Concurrency	int
-	Target		string
-	Timeout		int
-	VerifySSL	bool
-	Emoji		bool
-	HideFails	bool
+	Targets     string
+	Https       bool
+	Concurrency int
+	Target      string
+	Timeout     int
+	VerifySSL   bool
+	Emoji       bool
+	HideFails   bool
 }
 
 func Process(settings Settings) {
 
 	subdomains := getSubdomains(settings)
 
-	fmt.Println("[ * ]", "Loaded", len(subdomains), "targets" )
+	fmt.Println("[ * ]", "Loaded", len(subdomains), "targets")
 
 	fmt.Println(isEnabled(settings.Https), "HTTPS by default (--https)")
-	fmt.Println("[", settings.Concurrency,"]", "Concurrent requests (--concurrency)")
+	fmt.Println("[", settings.Concurrency, "]", "Concurrent requests (--concurrency)")
 	fmt.Println(isEnabled(settings.VerifySSL), "Check target only if SSL is valid (--verify_ssl)")
-	fmt.Println("[", settings.Timeout,"]", "HTTP request timeout (in seconds) (--timeout)")
+	fmt.Println("[", settings.Timeout, "]", "HTTP request timeout (in seconds) (--timeout)")
 	fmt.Println(isEnabled(settings.HideFails), "Show only potentially vulnerable subdomains (--hide_fails)")
 
 	fmt.Println("🔥 Good luck 🔥 ")
@@ -38,7 +38,6 @@ func Process(settings Settings) {
 	for i := 0; i < settings.Concurrency; i++ {
 		go processor(subdomainCh, sizeCh, settings)
 	}
-
 
 	for _, subdomain := range subdomains {
 		go generator(subdomain, subdomainCh)
@@ -57,7 +56,7 @@ func isEnabled(setting bool) string {
 	return "[ No ]"
 }
 
-func processor(subdomainCh chan string, sizeCh chan string, settings Settings){
+func processor(subdomainCh chan string, sizeCh chan string, settings Settings) {
 	for {
 		subdomain := <-subdomainCh
 

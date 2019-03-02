@@ -1,10 +1,10 @@
 package main
 
 import (
-"./src"
-"flag"
-"fmt"
-"os"
+	"./src"
+	"flag"
+	"fmt"
+	"os"
 )
 
 func main() {

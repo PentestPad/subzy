@@ -11,13 +11,13 @@ import (
 )
 
 type Result struct {
-	status	aurora.Value
-	entry	Fingerprint
+	status aurora.Value
+	entry  Fingerprint
 }
 
 func checkSubdomain(subdomain string, settings Settings) Result {
 
-	if isValidUrl(subdomain) == false{
+	if isValidUrl(subdomain) == false {
 		if settings.Https {
 			subdomain = "https://" + subdomain
 		} else {
@@ -29,29 +29,28 @@ func checkSubdomain(subdomain string, settings Settings) Result {
 
 	resp, err := client.Get(subdomain)
 	if err != nil {
-		return Result {aurora.Red("HTTP ERROR"), Fingerprint{}}
+		return Result{aurora.Red("HTTP ERROR"), Fingerprint{}}
 	}
 
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		return Result {aurora.Red("RESPONSE ERROR"), Fingerprint{}}
+		return Result{aurora.Red("RESPONSE ERROR"), Fingerprint{}}
 	}
 
 	return matchResponse(string(body))
 }
-
 
 func matchResponse(body string) Result {
 	fingerprints := Fingerprints()
 
 	for _, fingerprint := range fingerprints {
 		if strings.Contains(body, fingerprint.fingerprint) {
-			return Result {aurora.Green("VULNERABLE"), fingerprint}
+			return Result{aurora.Green("VULNERABLE"), fingerprint}
 
 		}
 	}
 
-	return Result {aurora.Red("NOT VULNERABLE"), Fingerprint{}}
+	return Result{aurora.Red("NOT VULNERABLE"), Fingerprint{}}
 
 }
 
@@ -72,7 +71,7 @@ func httpClient(settings Settings) *http.Client {
 
 	timeout := time.Duration(time.Duration(settings.Timeout) * time.Second)
 	client := &http.Client{
-		Timeout: timeout,
+		Timeout:   timeout,
 		Transport: tr,
 	}
 
