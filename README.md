@@ -11,6 +11,8 @@ Clone GitHub repo
 Run program  
 ```./subzy/subzy```
 
+If you get an error `exec format error: ./subzy`, you need to [install Golang](https://golang.org/doc/install) for your OS and compile the program by running `go build subzy.go` which will generate new `subzy` binary file
+
 ### Options
 ___
 Only required flag is either `--target` or `--targets`  
