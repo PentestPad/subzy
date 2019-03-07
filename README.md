@@ -1,5 +1,8 @@
-## Subzy
+## Subzy 
+
 Subdomain takeover tool which works based on matching response fingerprings from [can-i-take-over-xyz](https://github.com/EdOverflow/can-i-take-over-xyz/blob/master/README.md) 
+
+![Twitter Follow](https://img.shields.io/twitter/follow/return_0x.svg?label=Follow&style=social) 
 
 ![Subzy subdomain takeover](https://i.imgur.com/QvZNFdF.png "Subzy subdomain takeover")
 
