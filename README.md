@@ -36,8 +36,8 @@ ___
 Target subdomain can have protocol defined, if not `http://` will be used by default if `--https` not specifically set to true.
 
 -  List of subdomains
-   - ````./subzy --targets=list.txt````
+   - ````./subzy -targets list.txt````
 
 - Single or few subdomains 
-  - ```./subzy --target=test.google.com```
-  - ```./subzy --target=test.google.com,https://test.yahoo.com```
+  - ```./subzy -target test.google.com```
+  - ```./subzy -target test.google.com,https://test.yahoo.com```
