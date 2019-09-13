@@ -1,7 +1,7 @@
 package main
 
 import (
-	"./src"
+	"github.com/lukasikic/subzy/src"
 	"flag"
 	"fmt"
 	"os"
