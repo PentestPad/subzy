@@ -10,17 +10,22 @@ Subdomain takeover tool which works based on matching response fingerprings from
 ![Subzy subdomain takeover](https://i.imgur.com/QvZNFdF.png "Subzy subdomain takeover")
 
 ### Installation
-___
-Clone GitHub repo   
-```git clone https://github.com/LukaSikic/subzy```  
 
-Run program  
-```./subzy/subzy```
+```bash
+go get -u -v github.com/lukasikic/subzy
+go install -v github.com/lukasikic/subzy
+```
+
+If `$GOBIN` and `$GOPATH` are [properly set](https://github.com/golang/go/wiki/SettingGOPATH#bash), execute the program as:
+
+```bash
+subzy
+``` 
 
 If you get an error `exec format error: ./subzy`, you need to [install Golang](https://golang.org/doc/install) for your OS and compile the program by running `go build subzy.go` which will generate new `subzy` binary file
 
 ### Options
-___
+
 Only required flag is either `--target` or `--targets`  
 
 `--target` (string) - Set single or multiple (comma separated) target subdomain/s  
