@@ -37,7 +37,7 @@ Only required flag is either `--target` or `--targets`
 `--verify_ssl` (boolean) - If set to true, it won't check site with invalid SSL
 
 ### Usage
-___
+
 Target subdomain can have protocol defined, if not `http://` will be used by default if `--https` not specifically set to true.
 
 -  List of subdomains
