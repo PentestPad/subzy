@@ -43,6 +43,6 @@ Target subdomain can have protocol defined, if not `http://` will be used by def
 -  List of subdomains
    - ````./subzy -targets list.txt````
 
-- Single or few subdomains 
+- Single or multiple targets 
   - ```./subzy -target test.google.com```
   - ```./subzy -target test.google.com,https://test.yahoo.com```
