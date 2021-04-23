@@ -2,9 +2,10 @@ package src
 
 import (
 	"fmt"
-	"github.com/logrusorgru/aurora"
 	"log"
 	"strings"
+
+	"github.com/logrusorgru/aurora"
 )
 
 type Settings struct {
@@ -18,12 +19,17 @@ type Settings struct {
 	HideFails   bool
 }
 
-func Process(settings Settings) {
+func Process(settings Settings) error {
+
+	fingerprints, err := Fingerprints()
+	if err != nil {
+		return fmt.Errorf("Process: %v", err)
+	}
 
 	subdomains := getSubdomains(settings)
 
 	fmt.Println("[ * ]", "Loaded", len(subdomains), "targets")
-	fmt.Println("[ * ]", "Loaded", len(Fingerprints()), "fingerprints")
+	fmt.Println("[ * ]", "Loaded", len(fingerprints), "fingerprints")
 
 	fmt.Println(isEnabled(settings.Https), "HTTPS by default (--https)")
 	fmt.Println("[", settings.Concurrency, "]", "Concurrent requests (--concurrency)")
@@ -46,6 +52,7 @@ func Process(settings Settings) {
 		<-sizeCh
 	}
 
+	return nil
 }
 
 func isEnabled(setting bool) string {
@@ -63,9 +70,9 @@ func processor(subdomainCh chan string, sizeCh chan string, settings Settings) {
 
 		if result.status == aurora.Green("VULNERABLE") {
 			fmt.Print("-----------------\r\n")
-			fmt.Println("[ ", result.status, " ]", " - ", subdomain, " [ ", result.entry.engine, " ] ")
-			fmt.Println("[ ", aurora.Blue("DISCUSSION"), " ]", " - ", result.entry.discussion)
-			fmt.Println("[ ", aurora.Blue("DOCUMENTATION"), " ]", " - ", result.entry.documentation)
+			fmt.Println("[ ", result.status, " ]", " - ", subdomain, " [ ", result.entry.Engine, " ] ")
+			fmt.Println("[ ", aurora.Blue("DISCUSSION"), " ]", " - ", result.entry.Discussion)
+			fmt.Println("[ ", aurora.Blue("DOCUMENTATION"), " ]", " - ", result.entry.Documentation)
 
 			fmt.Print("-----------------\r\n")
 

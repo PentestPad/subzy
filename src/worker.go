@@ -2,12 +2,13 @@ package src
 
 import (
 	"crypto/tls"
-	"github.com/logrusorgru/aurora"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
 	"time"
+
+	"github.com/logrusorgru/aurora"
 )
 
 type Result struct {
@@ -41,10 +42,13 @@ func checkSubdomain(subdomain string, settings Settings) Result {
 }
 
 func matchResponse(body string) Result {
-	fingerprints := Fingerprints()
+	fingerprints, err := Fingerprints()
+	if err != nil {
+		return Result{aurora.Red("Fingerprint error"), Fingerprint{}}
+	}
 
 	for _, fingerprint := range fingerprints {
-		if strings.Contains(body, fingerprint.fingerprint) {
+		if strings.Contains(body, fingerprint.Fingerprint) {
 			return Result{aurora.Green("VULNERABLE"), fingerprint}
 
 		}
