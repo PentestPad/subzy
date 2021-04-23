@@ -1,13 +1,17 @@
 package main
 
 import (
-	"github.com/lukasikic/subzy/src"
 	"flag"
 	"fmt"
+	"log"
 	"os"
+
+	"github.com/lukasikic/subzy/src"
 )
 
 func main() {
+
+	src.CheckFingerprints()
 
 	settings := src.Settings{}
 
@@ -27,6 +31,8 @@ func main() {
 		os.Exit(2)
 	}
 
-	src.Process(settings)
+	if err := src.Process(settings); err != nil {
+		log.Fatalf("Error processing: %v\n", err)
+	}
 
 }
