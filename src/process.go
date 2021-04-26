@@ -55,7 +55,7 @@ func processor(subdomainCh chan string, sizeCh chan string, settings *Settings) 
 	for {
 		subdomain := <-subdomainCh
 
-		result := checkSubdomain(subdomain, *settings)
+		result := checkSubdomain(subdomain, settings)
 
 		if result.status == aurora.Green("VULNERABLE") {
 			fmt.Print("-----------------\r\n")
