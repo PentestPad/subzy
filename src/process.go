@@ -8,18 +8,7 @@ import (
 	"github.com/logrusorgru/aurora"
 )
 
-type Settings struct {
-	Targets     string
-	Https       bool
-	Concurrency int
-	Target      string
-	Timeout     int
-	VerifySSL   bool
-	Emoji       bool
-	HideFails   bool
-}
-
-func Process(settings Settings) error {
+func Process(settings *Settings) error {
 
 	fingerprints, err := Fingerprints()
 	if err != nil {
@@ -31,7 +20,7 @@ func Process(settings Settings) error {
 	fmt.Println("[ * ]", "Loaded", len(subdomains), "targets")
 	fmt.Println("[ * ]", "Loaded", len(fingerprints), "fingerprints")
 
-	fmt.Println(isEnabled(settings.Https), "HTTPS by default (--https)")
+	fmt.Println(isEnabled(settings.HTTPS), "HTTPS by default (--https)")
 	fmt.Println("[", settings.Concurrency, "]", "Concurrent requests (--concurrency)")
 	fmt.Println(isEnabled(settings.VerifySSL), "Check target only if SSL is valid (--verify_ssl)")
 	fmt.Println("[", settings.Timeout, "]", "HTTP request timeout (in seconds) (--timeout)")
@@ -62,11 +51,11 @@ func isEnabled(setting bool) string {
 	return "[ No ]"
 }
 
-func processor(subdomainCh chan string, sizeCh chan string, settings Settings) {
+func processor(subdomainCh chan string, sizeCh chan string, settings *Settings) {
 	for {
 		subdomain := <-subdomainCh
 
-		result := checkSubdomain(subdomain, settings)
+		result := checkSubdomain(subdomain, *settings)
 
 		if result.status == aurora.Green("VULNERABLE") {
 			fmt.Print("-----------------\r\n")
@@ -90,7 +79,7 @@ func generator(subdomain string, subdomainCh chan string) {
 	subdomainCh <- subdomain
 }
 
-func getSubdomains(settings Settings) []string {
+func getSubdomains(settings *Settings) []string {
 	if settings.Target == "" {
 		subdomains, err := readSubdomains(settings.Targets)
 		if err != nil {

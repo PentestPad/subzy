@@ -19,7 +19,7 @@ type Result struct {
 func checkSubdomain(subdomain string, settings Settings) Result {
 
 	if isValidUrl(subdomain) == false {
-		if settings.Https {
+		if settings.HTTPS {
 			subdomain = "https://" + subdomain
 		} else {
 			subdomain = "http://" + subdomain
