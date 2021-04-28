@@ -16,10 +16,10 @@ type Result struct {
 	entry  Fingerprint
 }
 
-func checkSubdomain(subdomain string, settings Settings) Result {
+func checkSubdomain(subdomain string, settings *Settings) Result {
 
 	if isValidUrl(subdomain) == false {
-		if settings.Https {
+		if settings.HTTPS {
 			subdomain = "https://" + subdomain
 		} else {
 			subdomain = "http://" + subdomain
@@ -67,7 +67,7 @@ func isValidUrl(toTest string) bool {
 	}
 }
 
-func httpClient(settings Settings) *http.Client {
+func httpClient(settings *Settings) *http.Client {
 
 	tr := &http.Transport{
 		TLSClientConfig: &tls.Config{InsecureSkipVerify: !settings.VerifySSL},
