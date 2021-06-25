@@ -280,6 +280,13 @@
     "Documentation": "https://help.statuspage.io/knowledge_base/topics/domain-ownership"
   },
   {
+    "Engine": "Strikingly",
+    "Status": "Vulnerable",
+    "Fingerprint": "But if you're looking to build your own website, <br/>you've come to the right place.",
+    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/58",
+    "Documentation": "https://medium.com/@sherif0x00/takeover-subdomains-pointing-to-strikingly-5e67df80cdfd"
+  },
+  {
     "Engine": "Uberflip",
     "Status": "Vulnerable",
     "Fingerprint": "Non-hub domain, The URL you've accessed does not provide a hub.",
