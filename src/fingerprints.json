@@ -51,7 +51,7 @@
   {
     "Engine": "Github",
     "Status": "Vulnerable",
-    "Fingerprint": "There isn't a Github Pages site here",
+    "Fingerprint": "There isn't a GitHub Pages site here",
     "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/37",
     "Documentation": "Not available"
   },
