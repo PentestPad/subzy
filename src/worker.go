@@ -49,12 +49,11 @@ func matchResponse(body string) Result {
 
 	for _, fingerprint := range fingerprints {
 		if strings.Contains(body, fingerprint.Fingerprint) {
-			
-			for _, false_positive_string := range fingerprint.False_Positive {
-				if len(false_positive_string) > 0 {
 
-					if strings.Contains(body, false_positive_string) {
-						
+			for _, false_positive_string := range fingerprint.False_Positive {
+				if len(string(false_positive_string)) > 0 {
+
+					if strings.Contains(body, string(false_positive_string)) {
 						return Result{aurora.Red("NOT VULNERABLE"), Fingerprint{}}
 					}
 				}
