@@ -1,6 +1,6 @@
 ## Subzy 
 
-Subdomain takeover tool which works based on matching response fingerprings from [can-i-take-over-xyz](https://github.com/EdOverflow/can-i-take-over-xyz/blob/master/README.md) 
+Subdomain takeover tool which works based on matching response fingerprints from [can-i-take-over-xyz](https://github.com/EdOverflow/can-i-take-over-xyz/blob/master/README.md) 
 
 <a href="https://twitter.com/intent/follow?screen_name=return_0x">
         <img src="https://img.shields.io/twitter/follow/return_0x.svg?style=social&logo=twitter"
