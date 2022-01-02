@@ -13,7 +13,7 @@ Subdomain takeover tool which works based on matching response fingerprints from
 
 ```bash
 go get -u -v github.com/lukasikic/subzy
-go install -v github.com/lukasikic/subzy
+go install -v github.com/lukasikic/subzy@latest
 ```
 
 If `$GOBIN` and `$GOPATH` are [properly set](https://github.com/golang/go/wiki/SettingGOPATH#bash), execute the program as:
