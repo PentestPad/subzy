@@ -247,7 +247,7 @@
   {
     "Engine": "Pantheon",
     "Status": "Vulnerable",
-    "Fingerprint": "404 error unknown site!",
+    "Fingerprint": "The gods are wise, but do not know of the site which you seek.",
     "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/24",
     "Documentation": "https://medium.com/@hussain_0x3c/hostile-subdomain-takeover-using-pantheon-ebf4ab813111"
   },
