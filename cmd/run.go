@@ -12,8 +12,9 @@ import (
 var opts = runner.Settings{}
 
 var runCmd = &cobra.Command{
-	Use:   "run",
-	Short: "Run subzy",
+	Use:     "run",
+	Short:   "Run subzy",
+	Aliases: []string{"r"},
 	RunE: func(cmd *cobra.Command, args []string) error {
 		fingerprintsPath, err := runner.GetFingerprintPath()
 		if err != nil {
