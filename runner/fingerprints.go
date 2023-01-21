@@ -1,4 +1,4 @@
-package src
+package runner
 
 import (
 	"encoding/json"

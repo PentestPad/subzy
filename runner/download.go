@@ -1,31 +1,39 @@
-package src
+package runner
 
 import (
+	"errors"
 	"fmt"
 	"io"
+	"io/fs"
 	"net/http"
 	"os"
 	"path"
+	"path/filepath"
 
 	homedir "github.com/mitchellh/go-homedir"
 )
 
-var fingerprintPath = "https://raw.githubusercontent.com/LukaSikic/subzy/master/src/fingerprints.json"
+var (
+	fingerprintPath = "https://raw.githubusercontent.com/LukaSikic/subzy/master/src/fingerprints.json"
+	subzyDir        = "subzy"
+)
 
 func GetFingerprintPath() (string, error) {
 	home, err := homedir.Dir()
 	if err != nil {
 		return "", fmt.Errorf("GetFingerprintPath: %v", err)
 	}
-	return path.Join(home, "fingerprints.json"), nil
+	dirPath := filepath.Join(home, subzyDir)
+	if _, err := os.Stat(dirPath); errors.Is(err, fs.ErrNotExist) {
+		if err := os.Mkdir(dirPath, os.ModePerm); err != nil {
+			return "", err
+		}
+	}
+	return path.Join(home, subzyDir, "fingerprints.json"), nil
 }
 
-func downloadFingerprints() error {
-	filePath, err := GetFingerprintPath()
-	if err != nil {
-		return fmt.Errorf("downloadFingerprints: %v", err)
-	}
-	out, err := os.Create(filePath)
+func downloadFingerprints(fingerprintsPath string) error {
+	out, err := os.OpenFile(fingerprintsPath, os.O_WRONLY|os.O_TRUNC|os.O_CREATE, os.ModePerm)
 	if err != nil {
 		return fmt.Errorf("downloadFingerprints: %v", err)
 	}
@@ -50,9 +58,5 @@ func CheckFingerprints() error {
 	if err != nil {
 		return fmt.Errorf("CheckFingerprints: %v", err)
 	}
-	if _, err := os.Stat(filePath); os.IsNotExist(err) {
-		downloadFingerprints()
-	}
-
-	return nil
+	return downloadFingerprints(filePath)
 }
