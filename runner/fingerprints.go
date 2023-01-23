@@ -1,9 +1,9 @@
-package src
+package runner
 
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"os"
 )
 
 type Fingerprint struct {
@@ -22,7 +22,7 @@ func Fingerprints() ([]Fingerprint, error) {
 	if err != nil {
 		return nil, fmt.Errorf("Fingerprints: %v", err)
 	}
-	file, err := ioutil.ReadFile(fingerPrintsPath)
+	file, err := os.ReadFile(fingerPrintsPath)
 	if err != nil {
 		return nil, fmt.Errorf("Fingerprints: %v", err)
 	}
