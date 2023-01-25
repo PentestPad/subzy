@@ -29,7 +29,7 @@ func GetFingerprintPath() (string, error) {
 			return "", err
 		}
 	}
-	return path.Join(home, subzyDir, "fingerprints.json"), nil
+	return path.Join(dirPath, "fingerprints.json"), nil
 }
 
 func downloadFingerprints(fingerprintsPath string) error {
