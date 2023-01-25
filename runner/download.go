@@ -14,7 +14,7 @@ import (
 )
 
 var (
-	fingerprintPath = "https://raw.githubusercontent.com/LukaSikic/subzy/master/src/fingerprints.json"
+	fingerprintPath = "https://raw.githubusercontent.com/LukaSikic/subzy/master/runner/fingerprints.json"
 	subzyDir        = "subzy"
 )
 
