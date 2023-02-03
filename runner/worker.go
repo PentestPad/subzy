@@ -1,84 +1,55 @@
 package runner
 
 import (
-	"crypto/tls"
-	"io/ioutil"
-	"net/http"
-	"net/url"
-	"strings"
-	"time"
-
 	"github.com/logrusorgru/aurora"
+	"io"
+	"strings"
+)
+
+type resultStatus string
+
+const (
+	ResultHTTPError     resultStatus = "http error"
+	ResultResponseError              = "response error"
+	ResultVulnerable                 = "vulnerable"
+	ResultNotVulnerable              = "not vulnerable"
 )
 
 type Result struct {
-	status aurora.Value
-	entry  Fingerprint
+	resStatus resultStatus
+	status    aurora.Value
+	entry     Fingerprint
 }
 
-func checkSubdomain(subdomain string, settings *Settings) Result {
-
+func (c *Config) checkSubdomain(subdomain string) Result {
 	if isValidUrl(subdomain) == false {
-		if settings.HTTPS {
+		if c.HTTPS {
 			subdomain = "https://" + subdomain
 		} else {
 			subdomain = "http://" + subdomain
 		}
 	}
 
-	client := httpClient(settings)
-
-	resp, err := client.Get(subdomain)
+	resp, err := c.client.Get(subdomain)
 	if err != nil {
-		return Result{aurora.Red("HTTP ERROR"), Fingerprint{}}
+		return Result{ResultHTTPError, aurora.Red("HTTP ERROR"), Fingerprint{}}
 	}
-
-	body, err := ioutil.ReadAll(resp.Body)
+	body, err := io.ReadAll(resp.Body)
 	if err != nil {
-		return Result{aurora.Red("RESPONSE ERROR"), Fingerprint{}}
+		resp.Body.Close()
+		return Result{ResultResponseError, aurora.Red("RESPONSE ERROR"), Fingerprint{}}
 	}
+	resp.Body.Close()
 
-	return matchResponse(string(body))
+	return c.matchResponse(string(body))
 }
 
-func matchResponse(body string) Result {
-	fingerprints, err := Fingerprints()
-	if err != nil {
-		return Result{aurora.Red("Fingerprint error"), Fingerprint{}}
-	}
-
-	for _, fingerprint := range fingerprints {
+func (c *Config) matchResponse(body string) Result {
+	for _, fingerprint := range c.fingerprints {
 		if strings.Contains(body, fingerprint.Fingerprint) {
-			return Result{aurora.Green("VULNERABLE"), fingerprint}
-
+			return Result{ResultVulnerable, aurora.Green("VULNERABLE"), fingerprint}
 		}
 	}
 
-	return Result{aurora.Red("NOT VULNERABLE"), Fingerprint{}}
-
-}
-
-func isValidUrl(toTest string) bool {
-	_, err := url.ParseRequestURI(toTest)
-	if err != nil {
-		return false
-	} else {
-		return true
-	}
-}
-
-func httpClient(settings *Settings) *http.Client {
-
-	tr := &http.Transport{
-		TLSClientConfig: &tls.Config{InsecureSkipVerify: !settings.VerifySSL},
-	}
-
-	timeout := time.Duration(time.Duration(settings.Timeout) * time.Second)
-	client := &http.Client{
-		Timeout:   timeout,
-		Transport: tr,
-	}
-
-	return client
-
+	return Result{ResultNotVulnerable, aurora.Red("NOT VULNERABLE"), Fingerprint{}}
 }

@@ -9,7 +9,7 @@ import (
 	"os"
 )
 
-var opts = runner.Settings{}
+var opts = runner.Config{}
 
 var runCmd = &cobra.Command{
 	Use:     "run",
@@ -36,11 +36,13 @@ var runCmd = &cobra.Command{
 }
 
 func init() {
-	runCmd.Flags().StringVarP(&opts.Target, "target", "s", "", "Comma separated list of domains")
-	runCmd.Flags().StringVarP(&opts.Targets, "targets", "m", "", "File containing the list of subdomains")
-	runCmd.Flags().BoolVarP(&opts.HTTPS, "https", "f", false, "Force https protocol if not no protocol defined for target (default false)")
-	runCmd.Flags().BoolVarP(&opts.VerifySSL, "verify_ssl", "c", false, "If set to true it won't check sites with insecure SSL and return HTTP Error")
+	runCmd.Flags().StringVar(&opts.Target, "target", "", "Comma separated list of domains")
+	runCmd.Flags().StringVar(&opts.Targets, "targets", "", "File containing the list of subdomains")
+	runCmd.Flags().StringVar(&opts.Output, "output", "", "JSON output filename")
+	runCmd.Flags().BoolVar(&opts.HTTPS, "https", false, "Force https protocol if not no protocol defined for target (default false)")
+	runCmd.Flags().BoolVar(&opts.VerifySSL, "verify_ssl", false, "If set to true it won't check sites with insecure SSL and return HTTP Error")
 	runCmd.Flags().BoolVar(&opts.HideFails, "hide_fails", false, "Don't display failed results")
+	runCmd.Flags().BoolVar(&opts.OnlyVuln, "vuln", false, "Save only vulnerable subdomains")
 	runCmd.Flags().IntVar(&opts.Concurrency, "concurrency", 10, "Number of concurrent checks")
 	runCmd.Flags().IntVar(&opts.Timeout, "timeout", 10, "Request timeout in seconds")
 	rootCmd.AddCommand(runCmd)
