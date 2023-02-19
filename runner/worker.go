@@ -47,6 +47,14 @@ func (c *Config) checkSubdomain(subdomain string) Result {
 func (c *Config) matchResponse(body string) Result {
 	for _, fingerprint := range c.fingerprints {
 		if strings.Contains(body, fingerprint.Fingerprint) {
+			for _, false_positive_string := range fingerprint.False_Positive {
+				if len(string(false_positive_string)) > 0 {
+
+					if strings.Contains(body, string(false_positive_string)) {
+						return Result{ResultNotVulnerable, aurora.Red("NOT VULNERABLE"), Fingerprint{}}
+					}
+				}
+			}
 			return Result{ResultVulnerable, aurora.Green("VULNERABLE"), fingerprint}
 		}
 	}
