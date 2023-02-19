@@ -36,7 +36,7 @@ Flags:
 Use "subzy [command] --help" for more information about a command.
 ``` 
 
-If you get an error `exec format error: ./subzy`, you need to [install Golang](https://golang.org/doc/install) for your OS and compile the program by running `go build subzy.go` which will generate new `subzy` binary file
+If you get an error `exec format error: ./subzy`, you need to [install Golang](https://golang.org/doc/install) for your OS and compile the program by running `go build -o subzy main.go` which will generate new `subzy` binary file
 
 ### Options
 
