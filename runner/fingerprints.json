@@ -282,7 +282,7 @@
   {
     "Engine": "Gemfury",
     "Status": "Vulnerable",
-    "Fingerprint": "404: This page could not be found.",
+    "Fingerprint": "Package, install, and use your code anywhere. Gemfury is a cloud repository for your private packages. It's simple, reliable, and hassle-free",
     "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/154",
     "Documentation": "https://khaledibnalwalid.wordpress.com/2020/06/25/gemfury-subdomain-takeover/",
     "False_Positive": [
