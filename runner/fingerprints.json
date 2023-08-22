@@ -51,7 +51,7 @@
   },
   {
     "Engine": "Feedpress",
-    "Status": "Vulnerable",
+    "Status": "Not Vulnerable",
     "Fingerprint": "The feed has not been found.",
     "Discussion": "https://hackerone.com/reports/195350",
     "Documentation": "Not available",
@@ -180,18 +180,8 @@
     ]
   },
   {
-    "Engine": "Unbounce",
-    "Status": "Not vulnerable",
-    "Fingerprint": "The requested URL was not found on this server",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/11",
-    "Documentation": "Not available",
-    "False_Positive": [
-      "That’s all we know."
-    ]
-  },
-  {
     "Engine": "UserVoice",
-    "Status": "Vulnerable",
+    "Status": "Not Vulnerable",
     "Fingerprint": "This UserVoice subdomain is currently available",
     "Discussion": "Not available",
     "Documentation": "Not available",
@@ -221,7 +211,7 @@
   },
   {
     "Engine": "Acquia",
-    "Status": "Not vulnerable",
+    "Status": "Not Vulnerable",
     "Fingerprint": "Web Site Not Found",
     "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/103",
     "Documentation": "Not available",
@@ -311,7 +301,7 @@
   },
   {
     "Engine": "Intercom",
-    "Status": "Vulnerable",
+    "Status": "Esge Case",
     "Fingerprint": "Uh oh. That page doesn't exist.",
     "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/69",
     "Documentation": "https://www.intercom.com/help/",
@@ -321,7 +311,7 @@
   },
   {
     "Engine": "Kinsta",
-    "Status": "Vulnerable",
+    "Status": "Not vulnerable",
     "Fingerprint": "No Site For Domain",
     "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/48",
     "Documentation": "https://kinsta.com/knowledgebase/add-domain/",
