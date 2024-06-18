@@ -46,7 +46,7 @@ func (c *Config) checkSubdomain(subdomain string) Result {
 
 func (c *Config) matchResponse(body string) Result {
 	for _, fingerprint := range c.fingerprints {
-		if strings.Contains(body, fingerprint.Fingerprint) {
+		if strings.Contains(body, fingerprint.Fingerprint) && fingerprint.Status != "Not vulnerable" {
 			for _, false_positive_string := range fingerprint.False_Positive {
 				if len(string(false_positive_string)) > 0 {
 
