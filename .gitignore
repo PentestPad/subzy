@@ -153,3 +153,4 @@ build/*
 *.syso
 
 .idea
+subzy*

@@ -1,63 +1,104 @@
 package runner
 
 import (
-	"github.com/logrusorgru/aurora"
 	"io"
+	"log"
+	"regexp"
 	"strings"
+
+	"github.com/logrusorgru/aurora"
 )
 
 type resultStatus string
 
 const (
 	ResultHTTPError     resultStatus = "http error"
-	ResultResponseError              = "response error"
-	ResultVulnerable                 = "vulnerable"
-	ResultNotVulnerable              = "not vulnerable"
+	ResultResponseError resultStatus = "response error"
+	ResultVulnerable    resultStatus = "vulnerable"
+	ResultNotVulnerable resultStatus = "not vulnerable"
 )
 
 type Result struct {
-	resStatus resultStatus
-	status    aurora.Value
-	entry     Fingerprint
+	ResStatus    resultStatus
+	Status       aurora.Value
+	Entry        Fingerprint
+	ResponseBody string
 }
 
 func (c *Config) checkSubdomain(subdomain string) Result {
-	if isValidUrl(subdomain) == false {
+	url := subdomain
+	if !isValidUrl(url) {
 		if c.HTTPS {
-			subdomain = "https://" + subdomain
+			url = "https://" + subdomain
 		} else {
-			subdomain = "http://" + subdomain
+			url = "http://" + subdomain
 		}
 	}
 
-	resp, err := c.client.Get(subdomain)
+	resp, err := c.client.Get(url)
 	if err != nil {
-		return Result{ResultHTTPError, aurora.Red("HTTP ERROR"), Fingerprint{}}
+		return Result{ResStatus: ResultHTTPError, Status: aurora.Red("HTTP ERROR"), Entry: Fingerprint{}, ResponseBody: ""}
 	}
-	body, err := io.ReadAll(resp.Body)
-	if err != nil {
-		resp.Body.Close()
-		return Result{ResultResponseError, aurora.Red("RESPONSE ERROR"), Fingerprint{}}
-	}
-	resp.Body.Close()
+	defer resp.Body.Close()
 
-	return c.matchResponse(string(body))
+	bodyBytes, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return Result{ResStatus: ResultResponseError, Status: aurora.Red("RESPONSE ERROR"), Entry: Fingerprint{}, ResponseBody: ""}
+	}
+
+	body := string(bodyBytes)
+
+	return c.matchResponse(body)
 }
 
 func (c *Config) matchResponse(body string) Result {
-	for _, fingerprint := range c.fingerprints {
-		if strings.Contains(body, fingerprint.Fingerprint) {
-			for _, false_positive_string := range fingerprint.False_Positive {
-				if len(string(false_positive_string)) > 0 {
-
-					if strings.Contains(body, string(false_positive_string)) {
-						return Result{ResultNotVulnerable, aurora.Red("NOT VULNERABLE"), Fingerprint{}}
-					}
+	for _, fp := range c.fingerprints {
+		if strings.Contains(body, fp.Fingerprint) {
+			if confirmsVulnerability(body, fp) {
+				return Result{
+					ResStatus:    ResultVulnerable,
+					Status:       aurora.Green("VULNERABLE"),
+					Entry:        fp,
+					ResponseBody: body,
 				}
 			}
-			return Result{ResultVulnerable, aurora.Green("VULNERABLE"), fingerprint}
+			if hasNonVulnerableIndicators(fp) {
+				return Result{
+					ResStatus:    ResultNotVulnerable,
+					Status:       aurora.Red("NOT VULNERABLE"),
+					Entry:        fp,
+					ResponseBody: body,
+				}
+			}
+		}
+	}
+	return Result{
+		ResStatus:    ResultNotVulnerable,
+		Status:       aurora.Red("NOT VULNERABLE"),
+		Entry:        Fingerprint{},
+		ResponseBody: body,
+	}
+}
+
+func hasNonVulnerableIndicators(fp Fingerprint) bool {
+	return fp.NXDomain
+}
+
+func confirmsVulnerability(body string, fp Fingerprint) bool {
+	if fp.NXDomain {
+		return false
+	}
+
+	if fp.Fingerprint != "" {
+		re, err := regexp.Compile(fp.Fingerprint)
+		if err != nil {
+			log.Printf("Error compiling regex for fingerprint %s: %v", fp.Fingerprint, err)
+			return false
+		}
+		if re.MatchString(body) {
+			return true
 		}
 	}
 
-	return Result{ResultNotVulnerable, aurora.Red("NOT VULNERABLE"), Fingerprint{}}
+	return false
 }
