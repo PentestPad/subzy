@@ -47,7 +47,7 @@ func downloadFingerprints(fingerprintsPath string) error {
 
 	_, err = io.Copy(out, resp.Body)
 	if err != nil {
-		fmt.Errorf("downloadFingerprints: %v", err)
+		return fmt.Errorf("downloadFingerprints: %v", err)
 	}
 
 	return nil
