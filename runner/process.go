@@ -34,7 +34,8 @@ func Process(config *Config) error {
 	fmt.Println("[", config.Timeout, "]", "HTTP request timeout (in seconds) (--timeout)")
 	fmt.Println(isEnabled(config.HideFails), "Show only potentially vulnerable subdomains (--hide_fails)")
 
-	subdomainCh := make(chan string, config.Concurrency)
+	const ExtraChannelCapacity = 5
+	subdomainCh := make(chan string, config.Concurrency+ExtraChannelCapacity)
 	resCh := make(chan *subdomainResult, config.Concurrency)
 
 	var wg sync.WaitGroup
