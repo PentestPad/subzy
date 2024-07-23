@@ -1,762 +1,932 @@
 [
   {
-    "Engine": "AWS/Elastic Beanstalk",
-    "Status": "Vulnerable",
-    "Fingerprint": "NXDOMAIN",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/194",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "AWS/Load Balancer (ELB)",
-    "Status": "Not Vulnerable",
-    "Fingerprint": "NXDOMAIN",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/137",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "AWS/S3",
-    "Status": "Vulnerable",
-    "Fingerprint": "The specified bucket does not exist",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/36",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Acquia",
-    "Status": "Not vulnerable",
-    "Fingerprint": "Web Site Not Found",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/103",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Agile CRM",
-    "Status": "Vulnerable",
-    "Fingerprint": "Sorry, this page is no longer available.",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/145",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Airee.ru",
-    "Status": "Vulnerable",
-    "Fingerprint": "\u041e\u0448\u0438\u0431\u043a\u0430 402. \u0421\u0435\u0440\u0432\u0438\u0441 \u0410\u0439\u0440\u0438.\u0440\u0444 \u043d\u0435 \u043e\u043f\u043b\u0430\u0447\u0435\u043d",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/104",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Akamai",
-    "Status": "Not Vulnerable",
-    "Fingerprint": "",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/13",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Anima",
-    "Status": "Vulnerable",
-    "Fingerprint": "The page you were looking for does not exist.",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/126",
-    "Documentation": "https://docs.animaapp.com/v1/launchpad/08-custom-domain.html",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Bitbucket",
-    "Status": "Vulnerable",
-    "Fingerprint": "Repository not found",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/97",
-    "Documentation": "",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Campaign Monitor",
-    "Status": "Vulnerable",
-    "Fingerprint": "Trying to access your account?",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/275",
-    "Documentation": "https://help.campaignmonitor.com/custom-domain-names",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Canny",
-    "Status": "Vulnerable",
-    "Fingerprint": "Company Not Found` `There is no such company. Did you enter the right URL?",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/114",
-    "Documentation": "",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Cargo Collective",
-    "Status": "Vulnerable",
-    "Fingerprint": "404 Not Found",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/152",
-    "Documentation": "https://support.2.cargocollective.com/Using-a-Third-Party-Domain",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Cloudfront",
-    "Status": "Not Vulnerable",
-    "Fingerprint": "ViewerCertificateException",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/29",
-    "Documentation": "https://aws.amazon.com/blogs/networking-and-content-delivery/continually-enhancing-domain-security-on-amazon-cloudfront",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Desk",
-    "Status": "Not Vulnerable",
-    "Fingerprint": "Please try again or try Desk.com free for 14 days.",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/9",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Digital Ocean",
-    "Status": "Vulnerable",
-    "Fingerprint": "Domain uses DO name serves with no records in DO.",
-    "Discussion": "Not available",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Discourse",
-    "Status": "Vulnerable",
-    "Fingerprint": "NXDOMAIN",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/49",
-    "Documentation": "https://hackerone.com/reports/264494",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Dreamhost",
-    "Status": "Not Vulnerable",
-    "Fingerprint": "Site Not Found Well, this is awkward. The site you're looking for is not here.",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/153",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Fastly",
-    "Status": "Not Vulnerable",
-    "Fingerprint": "Fastly error: unknown domain:",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/22",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Feedpress",
-    "Status": "Not Vulnerable",
-    "Fingerprint": "The feed has not been found.",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/80",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Firebase",
-    "Status": "Not Vulnerable",
-    "Fingerprint": "",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/128",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Fly.io",
-    "Status": "Not Vulnerable",
-    "Fingerprint": "404 Not Found",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/101",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Freshdesk",
-    "Status": "Not Vulnerable",
-    "Fingerprint": "We couldn't find servicedesk.victim.tld Maybe this is still fresh! You can claim it now at http://www.freshservice.com/signup",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/214",
-    "Documentation": "https://support.freshdesk.com/support/solutions/articles/37590-using-a-vanity-support-url-and-pointing-the-cname",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Frontify",
-    "Status": "Edge case",
-    "Fingerprint": "404 - Page Not Found` `Oops\u2026 looks like you got lost",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/170",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Gemfury",
-    "Status": "Vulnerable",
-    "Fingerprint": "404: This page could not be found.",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/154",
-    "Documentation": "https://khaledibnalwalid.wordpress.com/2020/06/25/gemfury-subdomain-takeover/",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Getresponse",
-    "Status": "Vulnerable",
-    "Fingerprint": "With GetResponse Landing Pages, lead generation has never been easier",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/235",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Ghost",
-    "Status": "Vulnerable",
-    "Fingerprint": "Site unavailable\\.&#124;Failed to resolve DNS path for this host",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/89",
-    "Documentation": "",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Github",
-    "Status": "Edge case",
-    "Fingerprint":  "There isn't a GitHub Pages site here.",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/37) [Issue #68](https://github.com/EdOverflow/can-i-take-over-xyz/issues/68",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Gitlab",
-    "Status": "Not vulnerable",
-    "Fingerprint":  "",
-    "Discussion": "https://hackerone.com/reports/312118",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Google Cloud Storage",
-    "Status": "Not vulnerable",
-    "Fingerprint":  "<?xml version='1.0' encoding='UTF-8'?><Error><Code>NoSuchBucket</Code><Message>The specified bucket does not exist.</Message></Error>",
-    "Discussion": "Not available",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Google Sites",
-    "Status": "Not vulnerable",
-    "Fingerprint": "The requested URL was not found on this server.",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/277",
-    "Documentation": "https://support.google.com/webmasters/answer/9008080?visit_id=637981741431097680-3818919062&rd=2",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "HatenaBlog",
-    "Status": "Vulnerable",
-    "Fingerprint": "404 Blog is not found",
-    "Discussion": "Not available",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Help Juice",
-    "Status": "Vulnerable",
-    "Fingerprint": "We could not find what you're looking for.",
-    "Discussion": "Not available",
-    "Documentation": "https://help.helpjuice.com/en_US/using-your-custom-domain/how-to-set-up-a-custom-domain",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Help Scout",
-    "Status": "Vulnerable",
-    "Fingerprint": "No settings were found for this company:",
-    "Discussion": "Not available",
-    "Documentation": "https://docs.helpscout.net/article/42-setup-custom-domain",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Helprace",
-    "Status": "Vulnerable",
-    "Fingerprint": "HTTP_STATUS=301",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/115",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Heroku",
-    "Status": "Edge case",
-    "Fingerprint": "No such app",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/38",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "HubSpot",
-    "Status": "Not Vulnerable",
-    "Fingerprint": "This page isn't available",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/59",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Instapage",
-    "Status": "Not Vulnerable",
-    "Fingerprint": "",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/73",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Intercom",
-    "Status": "Edge case",
-    "Fingerprint": "Uh oh. That page doesn't exist.",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/69",
-    "Documentation": "https://www.intercom.com/help/",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "JetBrains",
-    "Status": "Vulnerable",
-    "Fingerprint": "is not a registered InCloud YouTrack",
-    "Discussion": "Not available",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Key CDN",
-    "Status": "Not Vulnerable",
-    "Fingerprint": "",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/112",
-    "Documentation": "",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Kinsta",
-    "Status": "Vulnerable",
-    "Fingerprint": "No Site For Domain",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/48",
-    "Documentation": "https://kinsta.com/knowledgebase/add-domain/",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Landingi",
-    "Status": "Edge case",
-    "Fingerprint": "It looks like you\u2019re lost...",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/117",
-    "Documentation": "",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "LaunchRock",
-    "Status": "Vulnerable",
-    "Fingerprint": "HTTP_STATUS=500",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/74",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Mailchimp",
-    "Status": "Not Vulnerable",
-    "Fingerprint": "We can't find that page It looks like you're trying to reach a page that was built by Mailchimp but is no longer active.",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/discussions/250",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Mashery",
-    "Status": "Edge case",
-    "Fingerprint": "Unrecognized domain",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/14",
-    "Documentation": "https://hackerone.com/reports/275714",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Microsoft Azure",
-    "Status": "Vulnerable",
-    "Fingerprint": "NXDOMAIN",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/35",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Netlify",
-    "Status": "Edge case",
-    "Fingerprint": "Not Found - Request ID:",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/40",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Ngrok",
-    "Status": "Vulnerable",
-    "Fingerprint": "Tunnel .*.ngrok.io not found",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/92",
-    "Documentation": "https://ngrok.com/docs#http-custom-domains",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Pantheon",
-    "Status": "Vulnerable",
-    "Fingerprint": "404 error unknown site!",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/24",
-    "Documentation": "https://medium.com/@hussain_0x3c/hostile-subdomain-takeover-using-pantheon-ebf4ab813111",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Pingdom",
-    "Status": "Vulnerable",
-    "Fingerprint": "Sorry, couldn't find the status page",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/144",
-    "Documentation": "https://help.pingdom.com/hc/en-us/articles/205386171-Public-Status-Page",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Readme.io",
-    "Status": "Vulnerable",
-    "Fingerprint": "The creators of this project are still working on making everything perfect!",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/41",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  }, 
-  {
-    "Engine": "Readthedocs",
-    "Status": "Vulnerable",
-    "Fingerprint": "The link you have followed or the URL that you entered does not exist.",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/160",
-    "Documentation": "",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Sendgrid",
-    "Status": "Not Vulnerable",
-    "Fingerprint": "",
-    "Discussion": "",
-    "Documentation": "",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Shopify",
-    "Status": "Edge Case",
-    "Fingerprint": "Sorry, this shop is currently unavailable",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/32",
-    "Documentation": "https://medium.com/@thebuckhacker/how-to-do-55-000-subdomain-takeover-in-a-blink-of-an-eye-a94954c3fc75",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Short.io",
-    "Status": "Vulnerable",
-    "Fingerprint": "Link does not exist",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/260",
-    "Documentation": "",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "SmartJobBoard",
-    "Status": "Vulnerable",
-    "Fingerprint": "This job board website is either expired or its domain name is invalid.",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/139",
-    "Documentation": "https://help.smartjobboard.com/en/articles/1269655-connecting-a-custom-domain-name",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Smartling",
-    "Status": "Edge Case",
-    "Fingerprint": "Domain is not configured",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/67",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Smugsmug",
-    "Status": "Vulnerable",
-    "Fingerprint": "",
-    "Discussion": "",
-    "Documentation": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/60",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Squarespace",
-    "Status": "Not vulnerable",
-    "Fingerprint": "",
-    "Discussion": "",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Statuspage",
-    "Status": "Not Vulnerable",
-    "Fingerprint": "Status page pushed a DNS verification in order to prevent malicious takeovers what they mentioned in",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/pull/105",
-    "Documentation": "https://help.statuspage.io/knowledge_base/topics/domain-ownership",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Strikingly",
-    "Status": "Vulnerable",
-    "Fingerprint": "PAGE NOT FOUND",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/58",
-    "Documentation": "https://medium.com/@sherif0x00/takeover-subdomains-pointing-to-strikingly-5e67df80cdfd",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Surge.sh",
-    "Status": "Vulnerable",
-    "Fingerprint": "project not found",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/198",
-    "Documentation": "https://surge.sh/help/adding-a-custom-domain",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "SurveySparrow",
-    "Status": "Vulnerable",
-    "Fingerprint": "Account not found.",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/281",
-    "Documentation": "https://help.surveysparrow.com/custom-domain",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Tilda",
-    "Status": "Edge Case",
-    "Fingerprint": "Please renew your subscription",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/pull/20",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Tumblr",
-    "Status": "Edge case",
-    "Fingerprint": "Whatever you were looking for doesn't currently exist at this address",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/240",
-    "Documentation": "https://www.tumblr.com/docs/en/custom_domains",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Uberflip",
-    "Status": "Vulnerable",
-    "Fingerprint": "Non-hub domain, The URL you've accessed does not provide a hub.",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/150",
-    "Documentation": "https://help.uberflip.com/hc/en-us/articles/360018786372-Custom-Domain-Set-up-Your-Hub-on-a-Subdomain",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Unbounce",
-    "Status": "Not vulnerable",
-    "Fingerprint": "The requested URL was not found on this server",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/11",
-    "Documentation": "Not available",
-    "False_Positive": [
-      "That’s all we know."
-    ]
-  },
-  {
-    "Engine": "Uptimerobot",
-    "Status": "Vulnerable",
-    "Fingerprint": "page not found",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/45",
-    "Documentation": "https://exploit.linuxsec.org/uptimerobot-com-custom-domain-subdomain-takeover/",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "UserVoice",
-    "Status": "Not Vulnerable",
-    "Fingerprint": "This UserVoice subdomain is currently available",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/163",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Vercel",
-    "Status": "Edge case",
-    "Fingerprint": "DEPLOYMENT_NOT_FOUND.",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/183",
-    "Documentation": "https://vercel.com/docs/concepts/projects/domains/add-a-domain",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "WP Engine",
-    "Status": "Not Vulnerable",
-    "Fingerprint": "",
-    "Discussion": "",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Webflow",
-    "Status": "Edge Case",
-    "Fingerprint": "The page you are looking for doesn't exist or has been moved.",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/44",
-    "Documentation": "https://forum.webflow.com/t/hosting-a-subdomain-on-webflow/59201",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Wix",
-    "Status": "Edge Case",
-    "Fingerprint": "Looks Like This Domain Isn't Connected To A Website Yet!.",
-    "Discussion": "https://githuhttps://github.com/EdOverflow/can-i-take-over-xyz/issues/44b.com/EdOverflow/can-i-take-over-xyz/issues/231",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Wordpress",
-    "Status": "Vulnerable",
-    "Fingerprint": "Do you want to register ",
-    "Discussion": "https://hackerone.com/reports/274336",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-  {
-    "Engine": "Worksites",
-    "Status": "Vulnerable",
-    "Fingerprint": "Hello! Sorry, but the website you\u0026rsquo;re looking for doesn\u0026rsquo;t exist.",
-    "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/142",
-    "Documentation": "Not available",
-    "False_Positive": [
-      ""
-    ]
-  },
-{
-  "Engine": "Zendesk",
-  "Status": "Not Vulnerable",
-  "Fingerprint": "Help Center Closed",
-  "Discussion": "https://github.com/EdOverflow/can-i-take-over-xyz/issues/23",
-  "Documentation": "https://support.zendesk.com/hc/en-us/articles/203664356-Changing-the-address-of-your-Help-Center-subdomain-host-mapping-",
-  "False_Positive": [
-    ""
-  ]
-}
+    "cicd_pass": true,
+    "cname": ["elasticbeanstalk.com"],
+    "discussion": "[Issue #194](https://github.com/EdOverflow/can-i-take-over-xyz/issues/194)",
+    "documentation": "",
+    "fingerprint": "NXDOMAIN",
+    "http_status": null,
+    "nxdomain": true,
+    "service": "AWS/Elastic Beanstalk",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": false,
+    "cname": ["elb.amazonaws.com"],
+    "discussion": "[Issue #137](https://github.com/EdOverflow/can-i-take-over-xyz/issues/137)",
+    "documentation": "",
+    "fingerprint": "NXDOMAIN",
+    "http_status": null,
+    "nxdomain": true,
+    "service": "AWS/Load Balancer (ELB)",
+    "status": "Not vulnerable",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": true,
+    "cname": ["s3.amazonaws.com"],
+    "discussion": "[Issue #36](https://github.com/EdOverflow/can-i-take-over-xyz/issues/36)",
+    "documentation": "",
+    "fingerprint": "The specified bucket does not exist",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "AWS/S3",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #103](https://github.com/EdOverflow/can-i-take-over-xyz/issues/103)",
+    "documentation": "",
+    "fingerprint": "Web Site Not Found",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Acquia",
+    "status": "Not vulnerable",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": false,
+    "cname": ["agilecrm.com"],
+    "discussion": "[Issue #145](https://github.com/EdOverflow/can-i-take-over-xyz/issues/145)",
+    "documentation": "",
+    "fingerprint": "Sorry, this page is no longer available.",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Agile CRM",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": true,
+    "cname": ["airee.ru"],
+    "discussion": "[Issue #104](https://github.com/EdOverflow/can-i-take-over-xyz/issues/104)",
+    "documentation": "",
+    "fingerprint": "\u041e\u0448\u0438\u0431\u043a\u0430 402. \u0421\u0435\u0440\u0432\u0438\u0441 \u0410\u0439\u0440\u0438.\u0440\u0444 \u043d\u0435 \u043e\u043f\u043b\u0430\u0447\u0435\u043d",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Airee.ru",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #13](https://github.com/EdOverflow/can-i-take-over-xyz/issues/13)",
+    "documentation": "",
+    "fingerprint": "",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Akamai",
+    "status": "Not vulnerable",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": true,
+    "cname": ["animaapp.io"],
+    "discussion": "[Issue #126](https://github.com/EdOverflow/can-i-take-over-xyz/issues/126)",
+    "documentation": "[Anima Documentation](https://docs.animaapp.com/v1/launchpad/08-custom-domain.html)",
+    "fingerprint": "The page you were looking for does not exist.",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Anima",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": true,
+    "cname": ["bitbucket.io"],
+    "discussion": "[Issue #97](https://github.com/EdOverflow/can-i-take-over-xyz/issues/97)",
+    "documentation": "",
+    "fingerprint": "Repository not found",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Bitbucket",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #275](https://github.com/EdOverflow/can-i-take-over-xyz/issues/275)",
+    "documentation": "[Support Page](https://help.campaignmonitor.com/custom-domain-names)",
+    "fingerprint": "Trying to access your account?",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Campaign Monitor",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #114](https://github.com/EdOverflow/can-i-take-over-xyz/issues/114)",
+    "documentation": "",
+    "fingerprint": "Company Not Found` `There is no such company. Did you enter the right URL?",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Canny",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #152](https://github.com/EdOverflow/can-i-take-over-xyz/issues/152)",
+    "documentation": "[Cargo Support Page](https://support.2.cargocollective.com/Using-a-Third-Party-Domain)",
+    "fingerprint": "404 Not Found",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Cargo Collective",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #29](https://github.com/EdOverflow/can-i-take-over-xyz/issues/29)",
+    "documentation": "[Domain Security on Amazon CloudFront](https://aws.amazon.com/blogs/networking-and-content-delivery/continually-enhancing-domain-security-on-amazon-cloudfront/)",
+    "fingerprint": "ViewerCertificateException",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Cloudfront",
+    "status": "Not vulnerable",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #9](https://github.com/EdOverflow/can-i-take-over-xyz/issues/9)",
+    "documentation": "",
+    "fingerprint": "Please try again or try Desk.com free for 14 days.",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Desk",
+    "status": "Not vulnerable",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "",
+    "documentation": "",
+    "fingerprint": "Domain uses DO name servers with no records in DO.",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Digital Ocean",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": true,
+    "cname": ["trydiscourse.com"],
+    "discussion": "[Issue #49](https://github.com/EdOverflow/can-i-take-over-xyz/issues/49)",
+    "documentation": "[Hackerone](https://hackerone.com/reports/264494)",
+    "fingerprint": "NXDOMAIN",
+    "http_status": null,
+    "nxdomain": true,
+    "service": "Discourse",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #153](https://github.com/EdOverflow/can-i-take-over-xyz/issues/153) [Issue #5](https://github.com/shifa123/Can-I-take-over-xyz-v2/issues/5v)",
+    "documentation": "",
+    "fingerprint": "Site Not Found Well, this is awkward. The site you're looking for is not here.",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Dreamhost",
+    "status": "Not vulnerable",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #22](https://github.com/EdOverflow/can-i-take-over-xyz/issues/22)",
+    "documentation": "",
+    "fingerprint": "Fastly error: unknown domain:",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Fastly",
+    "status": "Not vulnerable",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #80](https://github.com/EdOverflow/can-i-take-over-xyz/issues/80)",
+    "documentation": "",
+    "fingerprint": "The feed has not been found.",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Feedpress",
+    "status": "Not vulnerable",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #128](https://github.com/EdOverflow/can-i-take-over-xyz/issues/128)",
+    "documentation": "",
+    "fingerprint": "",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Firebase",
+    "status": "Not vulnerable",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #101](https://github.com/EdOverflow/can-i-take-over-xyz/issues/101)",
+    "documentation": "",
+    "fingerprint": "404 Not Found",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Fly.io",
+    "status": "Not vulnerable",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #214](https://github.com/EdOverflow/can-i-take-over-xyz/issues/214)",
+    "documentation": "[Freshdesk Support Page](https://support.freshdesk.com/support/solutions/articles/37590-using-a-vanity-support-url-and-pointing-the-cname)",
+    "fingerprint": "We couldn't find servicedesk.victim.tld Maybe this is still fresh! You can claim it now at http://www.freshservice.com/signup",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Freshdesk",
+    "status": "Not vulnerable",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #170](https://github.com/EdOverflow/can-i-take-over-xyz/issues/170)",
+    "documentation": "",
+    "fingerprint": "404 - Page Not Found` `Oops\u2026 looks like you got lost",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Frontify",
+    "status": "Edge case",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": true,
+    "cname": ["furyns.com"],
+    "discussion": "[Issue #154](https://github.com/EdOverflow/can-i-take-over-xyz/issues/154)",
+    "documentation": "[Article](https://khaledibnalwalid.wordpress.com/2020/06/25/gemfury-subdomain-takeover/)",
+    "fingerprint": "404: This page could not be found.",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Gemfury",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #235](https://github.com/EdOverflow/can-i-take-over-xyz/issues/235)",
+    "documentation": "",
+    "fingerprint": "With GetResponse Landing Pages, lead generation has never been easier",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Getresponse",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": false,
+    "cname": ["ghost.io"],
+    "discussion": "[Issue #89](https://github.com/EdOverflow/can-i-take-over-xyz/issues/89)",
+    "documentation": "",
+    "fingerprint": "Site unavailable\\.&#124;Failed to resolve DNS path for this host",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Ghost",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #37](https://github.com/EdOverflow/can-i-take-over-xyz/issues/37) [Issue #68](https://github.com/EdOverflow/can-i-take-over-xyz/issues/68)",
+    "documentation": "",
+    "fingerprint": "There isn't a GitHub Pages site here.",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Github",
+    "status": "Edge case",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[HackerOne #312118](https://hackerone.com/reports/312118)",
+    "documentation": "",
+    "fingerprint": "",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Gitlab",
+    "status": "Not vulnerable",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "",
+    "documentation": "",
+    "fingerprint": "<?xml version='1.0' encoding='UTF-8'?><Error><Code>NoSuchBucket</Code><Message>The specified bucket does not exist.</Message></Error>",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Google Cloud Storage",
+    "status": "Not vulnerable",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #277](https://github.com/EdOverflow/can-i-take-over-xyz/issues/277)",
+    "documentation": "[Google Support](https://support.google.com/webmasters/answer/9008080?visit_id=637981741431097680-3818919062&rd=2)",
+    "fingerprint": "The requested URL was not found on this server. That\u2019s all we know.",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Google Sites",
+    "status": "Not vulnerable",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": true,
+    "cname": ["hatenablog.com"],
+    "discussion": "",
+    "documentation": "",
+    "fingerprint": "404 Blog is not found",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "HatenaBlog",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": true,
+    "cname": ["helpjuice.com"],
+    "discussion": "",
+    "documentation": "[Help Juice Support Page](https://help.helpjuice.com/en_US/using-your-custom-domain/how-to-set-up-a-custom-domain)",
+    "fingerprint": "We could not find what you're looking for.",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Help Juice",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": true,
+    "cname": ["helpscoutdocs.com"],
+    "discussion": "",
+    "documentation": "[HelpScout Docs](https://docs.helpscout.net/article/42-setup-custom-domain)",
+    "fingerprint": "No settings were found for this company:",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Help Scout",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": true,
+    "cname": ["helprace.com"],
+    "discussion": "[Issue #115](https://github.com/EdOverflow/can-i-take-over-xyz/issues/115)",
+    "documentation": "",
+    "fingerprint": "HTTP_STATUS=301",
+    "http_status": 301,
+    "nxdomain": false,
+    "service": "Helprace",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #38](https://github.com/EdOverflow/can-i-take-over-xyz/issues/38)",
+    "documentation": "",
+    "fingerprint": "No such app",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Heroku",
+    "status": "Edge case",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #59](https://github.com/EdOverflow/can-i-take-over-xyz/issues/59)",
+    "documentation": "",
+    "fingerprint": "This page isn't available",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "HubSpot",
+    "status": "Not vulnerable",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #73](https://github.com/EdOverflow/can-i-take-over-xyz/issues/73)",
+    "documentation": "",
+    "fingerprint": "",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Instapage",
+    "status": "Not vulnerable",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #69](https://github.com/EdOverflow/can-i-take-over-xyz/issues/69)",
+    "documentation": "[Help center](https://www.intercom.com/help/)",
+    "fingerprint": "Uh oh. That page doesn't exist.",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Intercom",
+    "status": "Edge case",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": false,
+    "cname": ["youtrack.cloud"],
+    "discussion": "[PR #107](https://github.com/EdOverflow/can-i-take-over-xyz/pull/107)",
+    "documentation": "[YouTrack InCloud Help Page](https://www.jetbrains.com/help/youtrack/incloud/Domain-Settings.html)",
+    "fingerprint": "is not a registered InCloud YouTrack",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "JetBrains",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #112](https://github.com/EdOverflow/can-i-take-over-xyz/issues/112)",
+    "documentation": "",
+    "fingerprint": "",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Key CDN",
+    "status": "Not vulnerable",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #48](https://github.com/EdOverflow/can-i-take-over-xyz/issues/48)",
+    "documentation": "[kinsta-add-domain](https://kinsta.com/knowledgebase/add-domain/)",
+    "fingerprint": "No Site For Domain",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Kinsta",
+    "status": "Not vulnerable",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #117](https://github.com/EdOverflow/can-i-take-over-xyz/issues/117)",
+    "documentation": "",
+    "fingerprint": "It looks like you\u2019re lost...",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Landingi",
+    "status": "Edge case",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": false,
+    "cname": ["launchrock.com"],
+    "discussion": "[Issue #74](https://github.com/EdOverflow/can-i-take-over-xyz/issues/74)",
+    "documentation": "",
+    "fingerprint": "HTTP_STATUS=500",
+    "http_status": 500,
+    "nxdomain": false,
+    "service": "LaunchRock",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Discussion #250](https://github.com/EdOverflow/can-i-take-over-xyz/discussions/250)",
+    "documentation": "",
+    "fingerprint": "We can't find that page It looks like you're trying to reach a page that was built by Mailchimp but is no longer active.",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Mailchimp",
+    "status": "Not vulnerable",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #14](https://github.com/EdOverflow/can-i-take-over-xyz/issues/14)",
+    "documentation": "[HackerOne](https://hackerone.com/reports/275714)",
+    "fingerprint": "Unrecognized domain",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Mashery",
+    "status": "Edge case",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": true,
+    "cname": [
+      "cloudapp.net",
+      "cloudapp.azure.com",
+      "azurewebsites.net",
+      "blob.core.windows.net",
+      "cloudapp.azure.com",
+      "azure-api.net",
+      "azurehdinsight.net",
+      "azureedge.net",
+      "azurecontainer.io",
+      "database.windows.net",
+      "azuredatalakestore.net",
+      "search.windows.net",
+      "azurecr.io",
+      "redis.cache.windows.net",
+      "azurehdinsight.net",
+      "servicebus.windows.net",
+      "visualstudio.com"
+    ],
+    "discussion": "[Issue #35](https://github.com/EdOverflow/can-i-take-over-xyz/issues/35)",
+    "documentation": "",
+    "fingerprint": "NXDOMAIN",
+    "http_status": null,
+    "nxdomain": true,
+    "service": "Microsoft Azure",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #40](https://github.com/EdOverflow/can-i-take-over-xyz/issues/40)",
+    "documentation": "",
+    "fingerprint": "Not Found - Request ID:",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Netlify",
+    "status": "Edge case",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": true,
+    "cname": ["ngrok.io"],
+    "discussion": "[Issue #92](https://github.com/EdOverflow/can-i-take-over-xyz/issues/92)",
+    "documentation": "[Ngrok Documentation](https://ngrok.com/docs#http-custom-domains)",
+    "fingerprint": "Tunnel .*.ngrok.io not found",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Ngrok",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #24](https://github.com/EdOverflow/can-i-take-over-xyz/issues/24)",
+    "documentation": "[Documentation](https://pantheon.io/docs/guides/domains/custom-domains) [Pantheon-Sub-takeover](https://medium.com/@hussain_0x3c/hostile-subdomain-takeover-using-pantheon-ebf4ab813111)",
+    "fingerprint": "404 error unknown site!",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Pantheon",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #144](https://github.com/EdOverflow/can-i-take-over-xyz/issues/144)",
+    "documentation": "[Support Page](https://help.pingdom.com/hc/en-us/articles/205386171-Public-Status-Page)",
+    "fingerprint": "Sorry, couldn't find the status page",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Pingdom",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": false,
+    "cname": ["readme.io"],
+    "discussion": "[Issue #41](https://github.com/EdOverflow/can-i-take-over-xyz/issues/41)",
+    "documentation": "",
+    "fingerprint": "The creators of this project are still working on making everything perfect!",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Readme.io",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #160](https://github.com/EdOverflow/can-i-take-over-xyz/issues/160)",
+    "documentation": "",
+    "fingerprint": "The link you have followed or the URL that you entered does not exist.",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Readthedocs",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "",
+    "documentation": "",
+    "fingerprint": "",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Sendgrid",
+    "status": "Not vulnerable",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #32](https://github.com/EdOverflow/can-i-take-over-xyz/issues/32) [Issue #46](https://github.com/EdOverflow/can-i-take-over-xyz/issues/46)",
+    "documentation": "[Medium Article](https://medium.com/@thebuckhacker/how-to-do-55-000-subdomain-takeover-in-a-blink-of-an-eye-a94954c3fc75)",
+    "fingerprint": "Sorry, this shop is currently unavailable.",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Shopify",
+    "status": "Edge case",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #260](https://github.com/EdOverflow/can-i-take-over-xyz/issues/260)",
+    "documentation": "",
+    "fingerprint": "Link does not exist",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Short.io",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": true,
+    "cname": ["52.16.160.97"],
+    "discussion": "[Issue #139](https://github.com/EdOverflow/can-i-take-over-xyz/issues/139)",
+    "documentation": "[Support Page](https://help.smartjobboard.com/en/articles/1269655-connecting-a-custom-domain-name)",
+    "fingerprint": "This job board website is either expired or its domain name is invalid.",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "SmartJobBoard",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #67](https://github.com/EdOverflow/can-i-take-over-xyz/issues/67)",
+    "documentation": "",
+    "fingerprint": "Domain is not configured",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Smartling",
+    "status": "Edge case",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #60](https://github.com/EdOverflow/can-i-take-over-xyz/issues/60)",
+    "documentation": "",
+    "fingerprint": "",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Smugsmug",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "",
+    "documentation": "",
+    "fingerprint": "",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Squarespace",
+    "status": "Not vulnerable",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "Status page pushed a DNS verification in order to prevent malicious takeovers what they mentioned in [This Doc](https://support.atlassian.com/statuspage/docs/configure-your-dns/) [PR #105](https://github.com/EdOverflow/can-i-take-over-xyz/pull/105) [PR #171](https://github.com/EdOverflow/can-i-take-over-xyz/pull/171)",
+    "documentation": "[Statuspage documentation](https://help.statuspage.io/knowledge_base/topics/domain-ownership)",
+    "fingerprint": "",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Statuspage",
+    "status": "Not vulnerable",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": true,
+    "cname": ["s.strikinglydns.com"],
+    "discussion": "[Issue #58](https://github.com/EdOverflow/can-i-take-over-xyz/issues/58)",
+    "documentation": "[Strikingly-Sub-takeover](https://medium.com/@sherif0x00/takeover-subdomains-pointing-to-strikingly-5e67df80cdfd)",
+    "fingerprint": "PAGE NOT FOUND.",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Strikingly",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": true,
+    "cname": ["na-west1.surge.sh"],
+    "discussion": "[Issue #198](https://github.com/EdOverflow/can-i-take-over-xyz/issues/198)",
+    "documentation": "[Surge Documentation](https://surge.sh/help/adding-a-custom-domain)",
+    "fingerprint": "project not found",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Surge.sh",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": true,
+    "cname": ["surveysparrow.com"],
+    "discussion": "[Issue #281](https://github.com/EdOverflow/can-i-take-over-xyz/issues/281)",
+    "documentation": "[Custom domain](https://help.surveysparrow.com/custom-domain)",
+    "fingerprint": "Account not found.",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "SurveySparrow",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #155](https://github.com/EdOverflow/can-i-take-over-xyz/issues/155) [PR #20](https://github.com/EdOverflow/can-i-take-over-xyz/pull/20)",
+    "documentation": "",
+    "fingerprint": "Please renew your subscription",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Tilda",
+    "status": "Edge case",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #240](https://github.com/EdOverflow/can-i-take-over-xyz/issues/240)",
+    "documentation": "[Tumblr Custom Domains](https://www.tumblr.com/docs/en/custom_domains)",
+    "fingerprint": "Whatever you were looking for doesn't currently exist at this address",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Tumblr",
+    "status": "Edge case",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": true,
+    "cname": ["read.uberflip.com"],
+    "discussion": "[Issue #150](https://github.com/EdOverflow/can-i-take-over-xyz/issues/150)",
+    "documentation": "[Uberflip Documentation](https://help.uberflip.com/hc/en-us/articles/360018786372-Custom-Domain-Set-up-Your-Hub-on-a-Subdomain)",
+    "fingerprint": "The URL you've accessed does not provide a hub.",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Uberflip",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #11](https://github.com/EdOverflow/can-i-take-over-xyz/issues/11)",
+    "documentation": "",
+    "fingerprint": "The requested URL was not found on this server.",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Unbounce",
+    "status": "Not vulnerable",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": false,
+    "cname": ["stats.uptimerobot.com"],
+    "discussion": "[Issue #45](https://github.com/EdOverflow/can-i-take-over-xyz/issues/45)",
+    "documentation": "[Uptimerobot-Sub-takeover](https://exploit.linuxsec.org/uptimerobot-com-custom-domain-subdomain-takeover/)",
+    "fingerprint": "page not found",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Uptimerobot",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #163](https://github.com/EdOverflow/can-i-take-over-xyz/issues/163)",
+    "documentation": "",
+    "fingerprint": "This UserVoice subdomain is currently available!",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "UserVoice",
+    "status": "Not vulnerable",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": false,
+    "cname": ["https://nonexistent-example.vercel.com/"],
+    "discussion": "[Issue #183](https://github.com/EdOverflow/can-i-take-over-xyz/issues/183)",
+    "documentation": "[Adding & Configuring a Custom Domain](https://vercel.com/docs/concepts/projects/domains/add-a-domain)",
+    "fingerprint": "DEPLOYMENT_NOT_FOUND.",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Vercel",
+    "status": "Edge case",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "",
+    "documentation": "",
+    "fingerprint": "",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "WP Engine",
+    "status": "Not vulnerable",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #44](https://github.com/EdOverflow/can-i-take-over-xyz/issues/44)",
+    "documentation": "[forum webflow](https://forum.webflow.com/t/hosting-a-subdomain-on-webflow/59201)",
+    "fingerprint": "The page you are looking for doesn't exist or has been moved.",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Webflow",
+    "status": "Edge case",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #231](https://github.com/EdOverflow/can-i-take-over-xyz/issues/231)",
+    "documentation": "",
+    "fingerprint": "Looks Like This Domain Isn't Connected To A Website Yet!",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Wix",
+    "status": "Edge case",
+    "vulnerable": false
+  },
+  {
+    "cicd_pass": true,
+    "cname": ["wordpress.com"],
+    "discussion": "[PR #176](https://github.com/EdOverflow/can-i-take-over-xyz/pull/176)",
+    "documentation": "",
+    "fingerprint": "Do you want to register .*.wordpress.com?",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Wordpress",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": true,
+    "cname": ["worksites.net", "69.164.223.206"],
+    "discussion": "[Issue #142](https://github.com/EdOverflow/can-i-take-over-xyz/issues/142)",
+    "documentation": "",
+    "fingerprint": "Hello! Sorry, but the website you&rsquo;re looking for doesn&rsquo;t exist.",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Worksites",
+    "status": "Vulnerable",
+    "vulnerable": true
+  },
+  {
+    "cicd_pass": false,
+    "cname": [],
+    "discussion": "[Issue #23](https://github.com/EdOverflow/can-i-take-over-xyz/issues/23)",
+    "documentation": "[Zendesk Support](https://support.zendesk.com/hc/en-us/articles/203664356-Changing-the-address-of-your-Help-Center-subdomain-host-mapping-)",
+    "fingerprint": "Help Center Closed",
+    "http_status": null,
+    "nxdomain": false,
+    "service": "Zendesk",
+    "status": "Not vulnerable",
+    "vulnerable": false
+  }
 ]
