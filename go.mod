@@ -1,4 +1,4 @@
-module github.com/LukaSikic/subzy
+module github.com/PentestPad/subzy
 
 go 1.19
 
