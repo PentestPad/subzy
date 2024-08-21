@@ -46,6 +46,12 @@ func (c *Config) checkSubdomain(subdomain string) Result {
 
 func (c *Config) matchResponse(body string) Result {
 	for _, fingerprint := range c.fingerprints {
+
+		if fingerprint.Fingerprint == "" {
+			// Skip the check if Fingerprint is empty in json file and move to the next. this prevent a scanner to show wrong or false positive result.
+			continue
+		}
+
 		if strings.Contains(body, fingerprint.Fingerprint) {
 			for _, false_positive_string := range fingerprint.False_Positive {
 				if len(string(false_positive_string)) > 0 {

@@ -19,6 +19,7 @@ type Config struct {
 	Output       string
 	client       *http.Client
 	fingerprints []Fingerprint
+	skipfingerprints []Fingerprint
 }
 
 func (s *Config) initHTTPClient() {
@@ -36,10 +37,11 @@ func (s *Config) initHTTPClient() {
 }
 
 func (c *Config) loadFingerprints() error {
-	fingerprints, err := Fingerprints()
+	validFingerprints, skippedFingerprints, err := Fingerprints()
 	if err != nil {
 		return err
 	}
-	c.fingerprints = fingerprints
+	c.skipfingerprints = skippedFingerprints
+	c.fingerprints = validFingerprints
 	return nil
 }
