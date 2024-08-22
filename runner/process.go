@@ -13,6 +13,7 @@ import (
 
 func Process(config *Config) error {
 	fingerprints, err := Fingerprints()
+
 	if err != nil {
 		return fmt.Errorf("Process: %v", err)
 	}
@@ -23,6 +24,7 @@ func Process(config *Config) error {
 
 	fmt.Println("[ * ] Loaded", len(subdomains), "targets")
 	fmt.Println("[ * ] Loaded", len(fingerprints), "fingerprints")
+
 	if config.Output != "" {
 		fmt.Printf("[ * ] Output filename: %s\n", config.Output)
 		fmt.Println(isEnabled(config.OnlyVuln), "Save only vulnerable subdomains")
