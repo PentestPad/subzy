@@ -1,5 +1,3 @@
-github.com/LukaSikic/subzy v1.1.0 h1:T4gxG4mIukQC8Kf3HOvkMNgdaWIXWTegkzg5025pdkk=
-github.com/LukaSikic/subzy v1.1.0/go.mod h1:NkzU10qDjUjrSYLruSSbi679ZYb2hM+yJ6o86uriqHc=
 github.com/cpuguy83/go-md2man/v2 v2.0.4/go.mod h1:tgQtvFlXSQOSOSIRvRPT7W67SCa46tRHOmNcaadrF8o=
 github.com/inconshreveable/mousetrap v1.1.0 h1:wN+x4NVGpMsO7ErUn/mUI3vEoE6Jt13X2s0bqwp9tc8=
 github.com/inconshreveable/mousetrap v1.1.0/go.mod h1:vpF70FUmC8bwa3OWnCshd2FqLfsEA9PFc4w1p2J65bw=

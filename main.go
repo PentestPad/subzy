@@ -1,6 +1,6 @@
 package main
 
-import "github.com/LukaSikic/subzy/cmd"
+import "github.com/PentestPad/subzy/cmd"
 
 func main() {
 	cmd.Execute()
