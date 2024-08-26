@@ -23,8 +23,20 @@ var runCmd = &cobra.Command{
 		if _, err := os.Stat(fingerprintsPath); errors.Is(err, fs.ErrNotExist) {
 			fmt.Printf("[ * ] Fingerprints not found; saving them to %q\n",
 				fingerprintsPath)
-			if err := runner.CheckFingerprints(); err != nil {
+			if err := runner.DownloadFingerprints(); err != nil {
 				return err
+			}
+		} else {
+			fmt.Printf("[ * ] Fingerprints found; checking integrity with an upstream\n")
+			found, err := runner.CheckIntegrity()
+			if err != nil {
+				return err
+			}
+			if !found {
+				fmt.Printf("[ * ] Integrity mismatch between local and upstream fingerprints; downloading\n")
+				if err := runner.DownloadFingerprints(); err != nil {
+					return err
+				}
 			}
 		}
 

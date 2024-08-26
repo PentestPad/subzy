@@ -1,6 +1,8 @@
 package runner
 
 import (
+	"bytes"
+	"crypto/md5"
 	"errors"
 	"fmt"
 	"io"
@@ -32,7 +34,12 @@ func GetFingerprintPath() (string, error) {
 	return path.Join(dirPath, "fingerprints.json"), nil
 }
 
-func downloadFingerprints(fingerprintsPath string) error {
+func DownloadFingerprints() error {
+	fingerprintsPath, err := GetFingerprintPath()
+	if err != nil {
+		return err
+	}
+
 	out, err := os.OpenFile(fingerprintsPath, os.O_WRONLY|os.O_TRUNC|os.O_CREATE, os.ModePerm)
 	if err != nil {
 		return fmt.Errorf("downloadFingerprints: %v", err)
@@ -53,10 +60,40 @@ func downloadFingerprints(fingerprintsPath string) error {
 	return nil
 }
 
-func CheckFingerprints() error {
-	filePath, err := GetFingerprintPath()
+func CheckIntegrity() (bool, error) {
+	resp, err := http.Get(fingerprintPath)
 	if err != nil {
-		return fmt.Errorf("CheckFingerprints: %v", err)
+		return false, fmt.Errorf("downloadFingerprints: %v", err)
 	}
-	return downloadFingerprints(filePath)
+	defer resp.Body.Close()
+
+	outBytes, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return false, err
+	}
+
+	h := md5.New()
+	upstreamSum := h.Sum(outBytes)
+
+	fingerprintsLocal, err := GetFingerprintPath()
+	if err != nil {
+		return false, err
+	}
+
+	f, err := os.Open(fingerprintsLocal)
+	if err != nil {
+		return false, err
+	}
+	defer f.Close()
+
+	localBytes := make([]byte, len(outBytes))
+	_, err = f.Read(localBytes)
+	if err != nil {
+		return false, err
+	}
+
+	h = md5.New()
+	localSum := h.Sum(localBytes)
+
+	return bytes.Equal(upstreamSum, localSum), nil
 }

@@ -27,7 +27,6 @@ Usage:
 Available Commands:
   help        Help about any command
   run         Run subzy
-  update      Update local fingerprints.json file
   version     Print subzy version
 
 Flags:
