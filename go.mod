@@ -1,6 +1,6 @@
 module github.com/PentestPad/subzy
 
-go 1.21.3
+go 1.23
 
 require (
 	github.com/logrusorgru/aurora v2.0.3+incompatible
