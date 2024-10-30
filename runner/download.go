@@ -3,9 +3,10 @@ package runner
 import (
 	"bytes"
 	"crypto/md5"
+	"encoding/base64"
+	"encoding/json"
 	"errors"
 	"fmt"
-	"io"
 	"io/fs"
 	"net/http"
 	"os"
@@ -16,9 +17,14 @@ import (
 )
 
 var (
-	fingerprintPath = "https://raw.githubusercontent.com/EdOverflow/can-i-take-over-xyz/master/fingerprints.json"
-	subzyDir        = "subzy"
+	fingerprintPath = "https://api.github.com/repos/EdOverflow/can-i-take-over-xyz/contents/fingerprints.json"
+
+	subzyDir = "subzy"
 )
+
+type GitHubFileContent struct {
+	Content string `json:"content"`
+}
 
 func GetFingerprintPath() (string, error) {
 	home, err := homedir.Dir()
@@ -46,54 +52,73 @@ func DownloadFingerprints() error {
 	}
 	defer out.Close()
 
-	resp, err := http.Get(fingerprintPath)
+	// Get the file from the GitHub API instead of the raw URL
+	resp, err := http.Get(fingerprintPath) // Use API URL
 	if err != nil {
 		return fmt.Errorf("downloadFingerprints: %v", err)
 	}
 	defer resp.Body.Close()
 
-	_, err = io.Copy(out, resp.Body)
+	bytes, err := decodeResponseFromApi(*resp)
 	if err != nil {
-		return fmt.Errorf("downloadFingerprints: %v", err)
+		return fmt.Errorf("failed to decode base64 content: %v", err)
+	}
+
+	// Write the decoded content to the file
+	_, err = out.Write(bytes)
+	if err != nil {
+		return fmt.Errorf("failed to write to fingerprints file: %v", err)
 	}
 
 	return nil
 }
 
 func CheckIntegrity() (bool, error) {
-	resp, err := http.Get(fingerprintPath)
+	// Fetch the upstream content via GitHub API
+	resp, err := http.Get(fingerprintPath) // Use API URL
 	if err != nil {
 		return false, fmt.Errorf("downloadFingerprints: %v", err)
 	}
 	defer resp.Body.Close()
 
-	outBytes, err := io.ReadAll(resp.Body)
+	// Decode the api response
+	upstreamBytes, err := decodeResponseFromApi(*resp)
 	if err != nil {
-		return false, err
+		return false, fmt.Errorf("failed to decode base64 content: %v", err)
 	}
 
-	h := md5.New()
-	upstreamSum := h.Sum(outBytes)
-
+	// Get local file content
 	fingerprintsLocal, err := GetFingerprintPath()
 	if err != nil {
 		return false, err
 	}
 
-	f, err := os.Open(fingerprintsLocal)
+	localBytes, err := os.ReadFile(fingerprintsLocal)
 	if err != nil {
-		return false, err
+		return false, fmt.Errorf("failed to read local fingerprints file: %v", err)
 	}
-	defer f.Close()
 
-	localBytes := make([]byte, len(outBytes))
-	_, err = f.Read(localBytes)
-	if err != nil {
-		return false, err
-	}
+	// Calculate MD5 checksums for both upstream and local files
+	h := md5.New()
+	upstreamSum := h.Sum(upstreamBytes)
 
 	h = md5.New()
 	localSum := h.Sum(localBytes)
 
+	// Compare the checksums
 	return bytes.Equal(upstreamSum, localSum), nil
+}
+
+func decodeResponseFromApi(resp http.Response) ([]byte, error) {
+	// Decode the JSON response from GitHub API
+	var fileContent GitHubFileContent
+	err := json.NewDecoder(resp.Body).Decode(&fileContent)
+	if err != nil {
+		return nil, fmt.Errorf("failed to decode json response: %v", err)
+	}
+	upstreamBytes, err := base64.StdEncoding.DecodeString(fileContent.Content)
+	if err != nil {
+		return nil, err
+	}
+	return upstreamBytes, nil
 }
