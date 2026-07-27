@@ -3,6 +3,7 @@ package runner
 import (
 	"bytes"
 	"crypto/md5"
+	"encoding/json"
 	"errors"
 	"fmt"
 	"io"
@@ -11,6 +12,7 @@ import (
 	"os"
 	"path"
 	"path/filepath"
+	"strings"
 
 	homedir "github.com/mitchellh/go-homedir"
 )
@@ -55,6 +57,55 @@ func DownloadFingerprints() error {
 	_, err = io.Copy(out, resp.Body)
 	if err != nil {
 		return fmt.Errorf("downloadFingerprints: %v", err)
+	}
+
+	return nil
+}
+
+func CleanupFingerprints() error {
+	fingerprintsPath, err := GetFingerprintPath()
+	if err != nil {
+		return err
+	}
+
+	file, err := os.ReadFile(fingerprintsPath)
+	if err != nil {
+		return fmt.Errorf("CleanupFingerprints: %v", err)
+	}
+
+	var fingerprints []Fingerprint
+	err = json.Unmarshal(file, &fingerprints)
+	if err != nil {
+		return fmt.Errorf("CleanupFingerprints: %v", err)
+	}
+
+	// Filter out Cargo Collective and fix UptimeRobot entries
+	var cleaned []Fingerprint
+	for _, fp := range fingerprints {
+		// Skip Cargo Collective entries entirely
+		if strings.ToLower(fp.Service) == "cargo collective" {
+			fmt.Printf("[ - ] Removing false positive fingerprint: %s\n", fp.Service)
+			continue
+		}
+
+		// Fix UptimeRobot "page not found" fingerprint
+		if strings.ToLower(fp.Service) == "uptimerobot" && fp.Fingerprint == "page not found" {
+			fmt.Printf("[ ~ ] Fixing UptimeRobot fingerprint (removing 'page not found')\n")
+			fp.Fingerprint = ""
+		}
+
+		cleaned = append(cleaned, fp)
+	}
+
+	// Write cleaned fingerprints back
+	cleanedJSON, err := json.MarshalIndent(cleaned, "", "  ")
+	if err != nil {
+		return fmt.Errorf("CleanupFingerprints: %v", err)
+	}
+
+	err = os.WriteFile(fingerprintsPath, cleanedJSON, os.ModePerm)
+	if err != nil {
+		return fmt.Errorf("CleanupFingerprints: %v", err)
 	}
 
 	return nil

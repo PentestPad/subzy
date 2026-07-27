@@ -26,6 +26,9 @@ var runCmd = &cobra.Command{
 			if err := runner.DownloadFingerprints(); err != nil {
 				return err
 			}
+			if err := runner.CleanupFingerprints(); err != nil {
+				return err
+			}
 		} else {
 			fmt.Printf("[ * ] Fingerprints found; checking integrity with an upstream\n")
 			found, err := runner.CheckIntegrity()
@@ -35,6 +38,9 @@ var runCmd = &cobra.Command{
 			if !found {
 				fmt.Printf("[ * ] Integrity mismatch between local and upstream fingerprints; downloading\n")
 				if err := runner.DownloadFingerprints(); err != nil {
+					return err
+				}
+				if err := runner.CleanupFingerprints(); err != nil {
 					return err
 				}
 			}
