@@ -3,10 +3,11 @@ package cmd
 import (
 	"errors"
 	"fmt"
-	"github.com/PentestPad/subzy/runner"
-	"github.com/spf13/cobra"
 	"io/fs"
 	"os"
+
+	"github.com/PentestPad/subzy/runner"
+	"github.com/spf13/cobra"
 )
 
 var opts = runner.Config{}
@@ -16,26 +17,45 @@ var runCmd = &cobra.Command{
 	Short:   "Run subzy",
 	Aliases: []string{"r"},
 	RunE: func(cmd *cobra.Command, args []string) error {
+		// Flag errors still show usage, but operational network errors do not.
+		cmd.Root().SilenceUsage = true
+
 		fingerprintsPath, err := runner.GetFingerprintPath()
 		if err != nil {
 			return err
 		}
-		if _, err := os.Stat(fingerprintsPath); errors.Is(err, fs.ErrNotExist) {
+		_, statErr := os.Stat(fingerprintsPath)
+		if errors.Is(statErr, fs.ErrNotExist) {
 			fmt.Printf("[ * ] Fingerprints not found; saving them to %q\n",
 				fingerprintsPath)
 			if err := runner.DownloadFingerprints(); err != nil {
 				return err
 			}
+		} else if statErr != nil {
+			return fmt.Errorf("access fingerprints: %w", statErr)
 		} else {
+			// Older versions truncated this file before making the request. Repair
+			// such a cache before attempting the normal integrity check.
+			if _, err := runner.Fingerprints(); err != nil {
+				fmt.Printf("[ ! ] Cached fingerprints are invalid; downloading a replacement: %v\n", err)
+				if downloadErr := runner.DownloadFingerprints(); downloadErr != nil {
+					return fmt.Errorf("replace invalid cached fingerprints: %w", downloadErr)
+				}
+				return runner.Process(&opts)
+			}
+
 			fmt.Printf("[ * ] Fingerprints found; checking integrity with an upstream\n")
 			found, err := runner.CheckIntegrity()
 			if err != nil {
-				return err
+				// The integrity check is maintenance, not a prerequisite for a scan.
+				// Keep using the cache when the upstream is temporarily unavailable.
+				fmt.Printf("[ ! ] Unable to check upstream fingerprints; using cached copy: %v\n", err)
+				found = true
 			}
 			if !found {
 				fmt.Printf("[ * ] Integrity mismatch between local and upstream fingerprints; downloading\n")
 				if err := runner.DownloadFingerprints(); err != nil {
-					return err
+					fmt.Printf("[ ! ] Unable to update fingerprints; using cached copy: %v\n", err)
 				}
 			}
 		}
